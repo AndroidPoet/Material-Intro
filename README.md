@@ -60,6 +60,8 @@ dependencies {
 	
 	///create object for MaterialIntroView
 	var materialIntroView: MaterialIntroView
+	 materialIntroView = findViewById(R.id.materialintroView)
+	
 	
 	///set default view with animation
      materialIntroView.defaultView(R.layout.layout_one, addFade())
@@ -71,11 +73,13 @@ dependencies {
    //  go next view with animation
     next.setOnClickListener {
       materialIntroView.next(addMaterialFade())
-    }
+    //it supports three animation patterns addMaterialFade(),addFade(),addSharedAxis(MaterialSharedAxis.X,true)
+	}
 
     //  go previous view with animation
     prev.setOnClickListener {
       materialIntroView.previous(addMaterialFade())
+    //it supports three animation patterns addMaterialFade(),addFade(),addSharedAxis(MaterialSharedAxis.X,true)
     }	
 	
 	
