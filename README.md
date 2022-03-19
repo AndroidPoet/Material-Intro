@@ -83,5 +83,15 @@ dependencies {
 ```	
 	
 	
+## MaterialFade
+	
+<p align="center">
+	<img src="https://user-images.githubusercontent.com/13647384/159129150-2b75f746-3982-4ed9-8b4a-f7936dc6a9fb.gif" width="30%"  />
+
+</p> <br>	
+	
+
+
+	
 	
 	
