@@ -1,5 +1,13 @@
-# Material Intro
-Sophisticated and cool intro with Material Motion Animation
+
+
+<h1 align="center">Material Intro </h1></br>
+
+<p align="center">
+Sophisticated and cool intro with Material Motion Animation.
+</p>
+</br>
+
+
 
 
 
@@ -11,6 +19,16 @@ Sophisticated and cool intro with Material Motion Animation
   <a href="https://github.com/AndroidPoet"><img alt="Profile" src="https://github.com/AndroidPoet/androidpoet.github.io/blob/main/badges/style-AndroidPoet-blue.svg"/></a>
  
 </p> <br>
+
+
+<p align="center">
+	<img src="https://user-images.githubusercontent.com/13647384/159128385-773dd6f0-499f-4885-a84b-5d22b7a9f7e5.svg" width="80%" />
+
+</p> <br>
+
+<p align="center">
+
+
 
 ## Who's using Material Intro?
 **👉 [Check out who's using Material Intro](/usecases.md)**
@@ -26,3 +44,41 @@ dependencies {
     implementation("io.github.androidpoet:materialintro:1.0.0")
 }
 ```
+
+	
+## SetUp
+
+
+```kotlin
+
+   <com.androidpoet.materialintro.MaterialIntroView
+        android:id="@+id/materialintroView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </com.androidpoet.materialintro.MaterialIntroView>
+	
+	///set default view with animation
+     materialIntroView.defaultView(R.layout.layout_one, addFade())
+
+    //set list of views
+    materialIntroView.setViewsList(list = list)
+	
+	
+   //  go next view with animation
+    next.setOnClickListener {
+      materialIntroView.next(addMaterialFade())
+    }
+
+    //  go previous view with animation
+    prev.setOnClickListener {
+      materialIntroView.previous(addMaterialFade())
+    }	
+	
+	
+	
+```	
+	
+	
+	
+	
