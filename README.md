@@ -58,6 +58,9 @@ dependencies {
 
     </com.androidpoet.materialintro.MaterialIntroView>
 	
+	///create object for MaterialIntroView
+	var materialIntroView: MaterialIntroView
+	
 	///set default view with animation
      materialIntroView.defaultView(R.layout.layout_one, addFade())
 
