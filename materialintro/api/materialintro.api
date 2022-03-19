@@ -1,0 +1,31 @@
+public final class com/androidpoet/materialintro/BuildConfig {
+	public static final field BUILD_TYPE Ljava/lang/String;
+	public static final field DEBUG Z
+	public static final field LIBRARY_PACKAGE_NAME Ljava/lang/String;
+	public fun <init> ()V
+}
+
+public final class com/androidpoet/materialintro/MaterialIntroExtensionKt {
+	public static final fun addFade (Landroidx/appcompat/app/AppCompatActivity;)Landroidx/transition/Fade;
+	public static final fun addFade (Landroidx/fragment/app/Fragment;)Landroidx/transition/Fade;
+	public static final fun addMaterialFade (Landroidx/appcompat/app/AppCompatActivity;)Lcom/google/android/material/transition/MaterialFade;
+	public static final fun addMaterialFade (Landroidx/fragment/app/Fragment;)Lcom/google/android/material/transition/MaterialFade;
+	public static final fun addSharedAxis (Landroidx/appcompat/app/AppCompatActivity;IZ)Lcom/google/android/material/transition/MaterialSharedAxis;
+	public static final fun addSharedAxis (Landroidx/fragment/app/Fragment;IZ)Lcom/google/android/material/transition/MaterialSharedAxis;
+	public static final fun showScene (Landroid/content/Context;ILandroidx/transition/Transition;Landroid/view/ViewGroup;)V
+	public static synthetic fun showScene$default (Landroid/content/Context;ILandroidx/transition/Transition;Landroid/view/ViewGroup;ILjava/lang/Object;)V
+}
+
+public final class com/androidpoet/materialintro/MaterialIntroView : android/widget/FrameLayout {
+	public fun <init> (Landroid/content/Context;Landroid/util/AttributeSet;)V
+	public final fun defaultView (ILandroidx/transition/Transition;)V
+	public final fun next (Landroidx/transition/Transition;)V
+	public final fun previous (Landroidx/transition/Transition;)V
+	public final fun setEventListener (Lcom/androidpoet/materialintro/MaterialIntroView$IndexEventListener;)V
+	public final fun setViewsList (Ljava/util/List;)V
+}
+
+public abstract interface class com/androidpoet/materialintro/MaterialIntroView$IndexEventListener {
+	public abstract fun onIndexChanged (I)V
+}
+
