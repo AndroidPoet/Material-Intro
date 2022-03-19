@@ -16,7 +16,7 @@ Sophisticated and cool intro with Material Motion Animation
 **👉 [Check out who's using Material Intro](/usecases.md)**
 
 ## Include in your project
-[![Maven Central](https://img.shields.io/maven-central/v/io.github.androidpoet/materialIntro.svg?label=Maven%20Central)](https://search.maven.org/artifact/io.github.androidpoet/materialIntro)
+[![Maven Central](https://img.shields.io/maven-central/v/io.github.androidpoet/materialintro.svg?label=Maven%20Central)](https://search.maven.org/artifact/io.github.androidpoet/materialintro)
 
 ### Gradle
 Add the dependency below to your **module**'s `build.gradle` file:
