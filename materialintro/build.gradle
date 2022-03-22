@@ -35,7 +35,6 @@ android {
     resourcePrefix 'materialintro'
 
 
-
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -68,7 +67,8 @@ dependencies {
     implementation "androidx.appcompat:appcompat:$versions.androidxAppcompat"
     implementation "com.google.android.material:material:$versions.googleMaterial"
     implementation "androidx.appcompat:appcompat:$versions.androidxAppcompat"
-
+    implementation("io.github.androidpoet:metaphor:1.0.6")
+    implementation "androidx.fragment:fragment-ktx:$versions.androidxFragment"
 
 }
 
