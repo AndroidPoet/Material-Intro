@@ -41,12 +41,12 @@ Add the dependency below to your **module**'s `build.gradle` file:
 
 ```gradle
 dependencies {
-    implementation("io.github.androidpoet:materialintro:1.0.0")
+    implementation("io.github.androidpoet:materialintro:1.0.2")
 }
 ```
 
 	
-## SetUp
+## SetUp for Views
 
 
 ```kotlin
@@ -55,16 +55,15 @@ dependencies {
         android:id="@+id/materialintroView"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
     </com.androidpoet.materialintro.MaterialIntroView>
 	
 	///create object for MaterialIntroView
 	var materialIntroView: MaterialIntroView
 	 materialIntroView = findViewById(R.id.materialintroView)
-	
-	
-	///set default view with animation
-     materialIntroView.defaultView(R.layout.layout_one, addFade())
+	//add views into list
+   list.add(R.layout.layout_one)
+    list.add(R.layout.layout_two)
+    list.add(R.layout.layout_three)
 
     //set list of views
     materialIntroView.setViewsList(list = list)
@@ -98,6 +97,63 @@ dependencies {
 	
 	
 ```	
+	
+
+## SetUp for Fragment
+
+
+```kotlin
+
+
+    <com.androidpoet.materialintro.MaterialIntroFragment
+        android:id="@+id/materialintroView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </com.androidpoet.materialintro.MaterialIntroFragment>
+
+	
+	///create object for MaterialIntroView
+	var materialIntroView: MaterialIntroView
+	 materialIntroView = findViewById(R.id.materialintroView)
+	
+	
+    list.add(FragmentOne())
+    list.add(FragmentTwo())
+    list.add(FragmentThree())
+
+
+    // /set list of views
+    materialIntroView.setFragmentsList(list = list)
+	
+	
+ //  go next view with animation
+    next.setOnClickListener {
+      materialIntroView.next(Animation.MaterialFade)
+    }
+
+    //  go previous view with animation
+    prev.setOnClickListener {
+      materialIntroView.previous(Animation.MaterialFade)
+    }	
+	
+    // interface for the observing current index 	
+    materialIntroView.setEventListener(object : MaterialIntroFragment.IndexEventListener {
+      override fun onIndexChanged(index: Int) {
+        next.isEnabled = index < list.size - 1
+        prev.isEnabled = index > 0
+        tabLayout.apply {
+          selectTab(getTabAt(index))
+        }
+      }
+    })
+	
+	
+	
+	
+	
+```	
+		
+	
 	
 	
 ## MaterialFade
