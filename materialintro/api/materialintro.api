@@ -1,3 +1,13 @@
+public final class com/androidpoet/materialintro/Animation {
+	public static final field AxisX Ljava/lang/String;
+	public static final field AxisY Ljava/lang/String;
+	public static final field AxisZ Ljava/lang/String;
+	public static final field INSTANCE Lcom/androidpoet/materialintro/Animation;
+	public static final field MaterialFade Ljava/lang/String;
+	public static final field MaterialFadeThrough Ljava/lang/String;
+	public static final field MaterialSharedAxis Ljava/lang/String;
+}
+
 public final class com/androidpoet/materialintro/BuildConfig {
 	public static final field BUILD_TYPE Ljava/lang/String;
 	public static final field DEBUG Z
@@ -16,9 +26,24 @@ public final class com/androidpoet/materialintro/MaterialIntroExtensionKt {
 	public static synthetic fun showScene$default (Landroid/content/Context;ILandroidx/transition/Transition;Landroid/view/ViewGroup;ILjava/lang/Object;)V
 }
 
+public final class com/androidpoet/materialintro/MaterialIntroFragment : android/widget/FrameLayout {
+	public fun <init> (Landroid/content/Context;Landroid/util/AttributeSet;)V
+	public final fun activity (Landroid/content/Context;)Landroidx/appcompat/app/AppCompatActivity;
+	public final fun next (Ljava/lang/String;)V
+	public final fun nextSharedAxis (Ljava/lang/String;Z)V
+	public final fun previous (Ljava/lang/String;)V
+	public final fun previousSharedAxis (Ljava/lang/String;Z)V
+	public final fun setEventListener (Lcom/androidpoet/materialintro/MaterialIntroFragment$IndexEventListener;)V
+	public final fun setFragmentsList (Ljava/util/List;)V
+}
+
+public abstract interface class com/androidpoet/materialintro/MaterialIntroFragment$IndexEventListener {
+	public abstract fun onIndexChanged (I)V
+}
+
 public final class com/androidpoet/materialintro/MaterialIntroView : android/widget/FrameLayout {
 	public fun <init> (Landroid/content/Context;Landroid/util/AttributeSet;)V
-	public final fun defaultView (ILandroidx/transition/Transition;)V
+	public final fun activity (Landroid/content/Context;)Landroidx/appcompat/app/AppCompatActivity;
 	public final fun next (Landroidx/transition/Transition;)V
 	public final fun previous (Landroidx/transition/Transition;)V
 	public final fun setEventListener (Lcom/androidpoet/materialintro/MaterialIntroView$IndexEventListener;)V
