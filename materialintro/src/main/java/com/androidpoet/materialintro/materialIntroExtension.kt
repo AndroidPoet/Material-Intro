@@ -10,23 +10,24 @@ import androidx.transition.Fade
 import androidx.transition.Scene
 import androidx.transition.Transition
 import androidx.transition.TransitionManager
+import androidx.transition.TransitionSet
 import com.google.android.material.transition.MaterialFade
 import com.google.android.material.transition.MaterialSharedAxis
 
-//returns MaterialFade object for Activity
+// returns MaterialFade object for Activity
 public fun AppCompatActivity.addMaterialFade(): MaterialFade {
   val materialFade = MaterialFade()
   materialFade.duration = 300
   return materialFade
 }
-//returns Fade object for Activity
+// returns Fade object for Activity
 public fun AppCompatActivity.addFade(): Fade {
   val fade = Fade()
   fade.duration = 300
 
   return fade
 }
-//returns SharedAxis object for Activity
+// returns SharedAxis object for Activity
 public fun AppCompatActivity.addSharedAxis(
   axis: Int,
   forward: Boolean
@@ -35,21 +36,21 @@ public fun AppCompatActivity.addSharedAxis(
   sharedAxis.duration = 300
   return sharedAxis
 }
-//returns MaterialFade object for Fragment
+// returns MaterialFade object for Fragment
 public fun Fragment.addMaterialFade(): MaterialFade {
   val materialFade = MaterialFade()
   materialFade.duration = 300
 
   return materialFade
 }
-//returns Fade object for Fragment
+// returns Fade object for Fragment
 public fun Fragment.addFade(): Fade {
   val fade = Fade()
   fade.duration = 300
 
   return fade
 }
-//returns SharedAxis object for Fragment
+// returns SharedAxis object for Fragment
 public fun Fragment.addSharedAxis(
   axis: Int,
   forward: Boolean
@@ -58,7 +59,7 @@ public fun Fragment.addSharedAxis(
   sharedAxis.duration = 300
   return sharedAxis
 }
-//go to next Scene with TransitionManager
+// go to next Scene with TransitionManager
 public fun Context.showScene(
   @LayoutRes layoutId: Int,
   transition: Transition? = null,
@@ -68,10 +69,14 @@ public fun Context.showScene(
     return
   }
 
-  val scene = Scene.getSceneForLayout(root, layoutId, this)
+  val transitionSet = TransitionSet()
+  if (transition != null) {
+    transitionSet.addTransition(transition)
+  }
 
+  val scene = Scene.getSceneForLayout(root, layoutId, this)
   transition?.let {
-    TransitionManager.go(scene, it)
+    TransitionManager.go(scene, transitionSet)
   } ?: run {
     TransitionManager.go(scene)
   }

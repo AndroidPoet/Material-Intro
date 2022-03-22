@@ -10,6 +10,7 @@
         <entry key="..\:/AndroidProjects/MaterialIntroDemo/app/src/main/res/drawable/undraw_drag.xml" value="0.194" />
         <entry key="..\:/AndroidProjects/MaterialIntroDemo/app/src/main/res/drawable/undraw_social_sharing.xml" value="0.3205" />
         <entry key="..\:/AndroidProjects/MaterialIntroDemo/app/src/main/res/drawable/undraw_winners.xml" value="0.1625" />
+        <entry key="..\:/AndroidProjects/MaterialIntroDemo/app/src/main/res/layout/activity_fragment.xml" value="0.27239583333333334" />
         <entry key="..\:/AndroidProjects/MaterialIntroDemo/app/src/main/res/layout/activity_main.xml" value="0.2128623188405797" />
         <entry key="..\:/AndroidProjects/MaterialIntroDemo/app/src/main/res/layout/fragment_ragment_one.xml" value="0.31354166666666666" />
         <entry key="..\:/AndroidProjects/MaterialIntroDemo/app/src/main/res/layout/fragment_test.xml" value="0.31354166666666666" />
@@ -30,6 +31,7 @@
         <entry key="..\:/AndroidProjects/MaterialIntroDemo/materialintro/src/main/res/layout/activity_material_intro.xml" value="0.15186680121089807" />
         <entry key="..\:/AndroidProjects/MaterialIntroDemo/materialintro/src/main/res/layout/framelayout.xml" value="0.3333333333333333" />
         <entry key="..\:/AndroidProjects/MaterialIntroDemo/materialintro/src/main/res/layout/introView.xml" value="0.28958333333333336" />
+        <entry key="..\:/AndroidProjects/MaterialIntroDemo/materialintro/src/main/res/layout/materialintro.xml" value="0.28125" />
       </map>
     </option>
   </component>
