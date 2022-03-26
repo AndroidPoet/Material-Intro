@@ -18,7 +18,7 @@
  */
 
 ext.versions = [
-        minSdk           : 17,
+        minSdk           : 23,
         compileSdk       : 31,
         versionCode      : 42,
         versionName      : '1.4.1',

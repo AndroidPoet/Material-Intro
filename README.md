@@ -3,7 +3,7 @@
 <h1 align="center">Material Intro </h1></br>
 
 <p align="center">
-Sophisticated and cool intro with Material Motion Animation.
+Sophisticated and cool intro with Material Motion Animations.
 </p>
 </br>
 
@@ -41,7 +41,7 @@ Add the dependency below to your **module**'s `build.gradle` file:
 
 ```gradle
 dependencies {
-    implementation("io.github.androidpoet:materialintro:1.0.2")
+    implementation("io.github.androidpoet:materialintro:1.0.3")
 }
 ```
 
@@ -69,17 +69,16 @@ dependencies {
     materialIntroView.setViewsList(list = list)
 	
 	
-   //  go next view with animation
+	
+	//  go to next view with animation
     next.setOnClickListener {
-      materialIntroView.next(addMaterialFade())
-    //it supports three animation patterns addMaterialFade(),addFade(),addSharedAxis(MaterialSharedAxis.X,true)
-	}
+      materialIntroView.next(IntroAnimation.MaterialFade)
+    }
 
-    //  go previous view with animation
+    //  go to previous view with animation
     prev.setOnClickListener {
-      materialIntroView.previous(addMaterialFade())
-    //it supports three animation patterns addMaterialFade(),addFade(),addSharedAxis(MaterialSharedAxis.X,true)
-    }	
+      materialIntroView.previous(IntroAnimation.MaterialFade)
+    }
 	
   // interface for the observing current index 	
  materialIntroView.setEventListener(object : IndexEventListener {
@@ -126,15 +125,17 @@ dependencies {
     materialIntroView.setFragmentsList(list = list)
 	
 	
- //  go next view with animation
+	
+	//  go to next view with animation
     next.setOnClickListener {
-      materialIntroView.next(Animation.MaterialFade)
+      materialIntroView.next(IntroAnimation.MaterialFade)
     }
 
-    //  go previous view with animation
+    //  go to previous view with animation
     prev.setOnClickListener {
-      materialIntroView.previous(Animation.MaterialFade)
-    }	
+      materialIntroView.previous(IntroAnimation.MaterialFade)
+    }
+	
 	
     // interface for the observing current index 	
     materialIntroView.setEventListener(object : MaterialIntroFragment.IndexEventListener {

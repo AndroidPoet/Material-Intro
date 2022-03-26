@@ -3,12 +3,11 @@ package com.androidpoet.materialintrodemo
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.androidpoet.materialintro.IntroAnimation
 import com.androidpoet.materialintro.MaterialIntroView
 import com.androidpoet.materialintro.MaterialIntroView.IndexEventListener
-import com.androidpoet.materialintro.addSharedAxis
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.tabs.TabLayout
-import com.google.android.material.transition.platform.MaterialSharedAxis
 
 class MainActivity : AppCompatActivity() {
 
@@ -47,12 +46,12 @@ class MainActivity : AppCompatActivity() {
 
     //  go next view with animation
     next.setOnClickListener {
-      materialIntroView.next(addSharedAxis(MaterialSharedAxis.X, true))
+      materialIntroView.next(IntroAnimation.MaterialFade)
     }
 
     //  go previous view with animation
     prev.setOnClickListener {
-      materialIntroView.previous(addSharedAxis(MaterialSharedAxis.X, true))
+      materialIntroView.previous(IntroAnimation.MaterialFade)
     }
   }
 
