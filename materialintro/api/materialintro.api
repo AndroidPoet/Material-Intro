@@ -1,13 +1,3 @@
-public final class com/androidpoet/materialintro/Animation {
-	public static final field AxisX Ljava/lang/String;
-	public static final field AxisY Ljava/lang/String;
-	public static final field AxisZ Ljava/lang/String;
-	public static final field INSTANCE Lcom/androidpoet/materialintro/Animation;
-	public static final field MaterialFade Ljava/lang/String;
-	public static final field MaterialFadeThrough Ljava/lang/String;
-	public static final field MaterialSharedAxis Ljava/lang/String;
-}
-
 public final class com/androidpoet/materialintro/BuildConfig {
 	public static final field BUILD_TYPE Ljava/lang/String;
 	public static final field DEBUG Z
@@ -15,24 +5,56 @@ public final class com/androidpoet/materialintro/BuildConfig {
 	public fun <init> ()V
 }
 
+public abstract class com/androidpoet/materialintro/IntroAnimation {
+}
+
+public final class com/androidpoet/materialintro/IntroAnimation$MaterialFade : com/androidpoet/materialintro/IntroAnimation {
+	public static final field INSTANCE Lcom/androidpoet/materialintro/IntroAnimation$MaterialFade;
+}
+
+public final class com/androidpoet/materialintro/IntroAnimation$MaterialFadeThrough : com/androidpoet/materialintro/IntroAnimation {
+	public static final field INSTANCE Lcom/androidpoet/materialintro/IntroAnimation$MaterialFadeThrough;
+}
+
+public final class com/androidpoet/materialintro/IntroAnimation$MaterialSharedXAxisBackward : com/androidpoet/materialintro/IntroAnimation {
+	public static final field INSTANCE Lcom/androidpoet/materialintro/IntroAnimation$MaterialSharedXAxisBackward;
+}
+
+public final class com/androidpoet/materialintro/IntroAnimation$MaterialSharedXAxisForeword : com/androidpoet/materialintro/IntroAnimation {
+	public static final field INSTANCE Lcom/androidpoet/materialintro/IntroAnimation$MaterialSharedXAxisForeword;
+}
+
+public final class com/androidpoet/materialintro/IntroAnimation$MaterialSharedYAxisBackward : com/androidpoet/materialintro/IntroAnimation {
+	public static final field INSTANCE Lcom/androidpoet/materialintro/IntroAnimation$MaterialSharedYAxisBackward;
+}
+
+public final class com/androidpoet/materialintro/IntroAnimation$MaterialSharedYAxisForeword : com/androidpoet/materialintro/IntroAnimation {
+	public static final field INSTANCE Lcom/androidpoet/materialintro/IntroAnimation$MaterialSharedYAxisForeword;
+}
+
+public final class com/androidpoet/materialintro/IntroAnimation$MaterialSharedZAxisBackward : com/androidpoet/materialintro/IntroAnimation {
+	public static final field INSTANCE Lcom/androidpoet/materialintro/IntroAnimation$MaterialSharedZAxisBackward;
+}
+
+public final class com/androidpoet/materialintro/IntroAnimation$MaterialSharedZAxisForeword : com/androidpoet/materialintro/IntroAnimation {
+	public static final field INSTANCE Lcom/androidpoet/materialintro/IntroAnimation$MaterialSharedZAxisForeword;
+}
+
 public final class com/androidpoet/materialintro/MaterialIntroExtensionKt {
-	public static final fun addFade (Landroidx/appcompat/app/AppCompatActivity;)Landroidx/transition/Fade;
-	public static final fun addFade (Landroidx/fragment/app/Fragment;)Landroidx/transition/Fade;
-	public static final fun addMaterialFade (Landroidx/appcompat/app/AppCompatActivity;)Lcom/google/android/material/transition/MaterialFade;
-	public static final fun addMaterialFade (Landroidx/fragment/app/Fragment;)Lcom/google/android/material/transition/MaterialFade;
-	public static final fun addSharedAxis (Landroidx/appcompat/app/AppCompatActivity;IZ)Lcom/google/android/material/transition/MaterialSharedAxis;
-	public static final fun addSharedAxis (Landroidx/fragment/app/Fragment;IZ)Lcom/google/android/material/transition/MaterialSharedAxis;
+	public static final fun activity (Landroid/content/Context;)Landroidx/appcompat/app/AppCompatActivity;
+	public static final fun addFade (Landroid/content/Context;)Landroidx/transition/Fade;
+	public static final fun addMaterialFade (Landroid/content/Context;)Lcom/google/android/material/transition/MaterialFade;
+	public static final fun addMaterialFadeThrough (Landroid/content/Context;)Lcom/google/android/material/transition/MaterialFadeThrough;
+	public static final fun addSharedAxis (Landroid/content/Context;IZ)Lcom/google/android/material/transition/MaterialSharedAxis;
+	public static final fun getTransition (Landroid/content/Context;Lcom/androidpoet/materialintro/IntroAnimation;)Landroidx/transition/Transition;
 	public static final fun showScene (Landroid/content/Context;ILandroidx/transition/Transition;Landroid/view/ViewGroup;)V
 	public static synthetic fun showScene$default (Landroid/content/Context;ILandroidx/transition/Transition;Landroid/view/ViewGroup;ILjava/lang/Object;)V
 }
 
 public final class com/androidpoet/materialintro/MaterialIntroFragment : android/widget/FrameLayout {
 	public fun <init> (Landroid/content/Context;Landroid/util/AttributeSet;)V
-	public final fun activity (Landroid/content/Context;)Landroidx/appcompat/app/AppCompatActivity;
-	public final fun next (Ljava/lang/String;)V
-	public final fun nextSharedAxis (Ljava/lang/String;Z)V
-	public final fun previous (Ljava/lang/String;)V
-	public final fun previousSharedAxis (Ljava/lang/String;Z)V
+	public final fun next (Lcom/androidpoet/materialintro/IntroAnimation;)V
+	public final fun previous (Lcom/androidpoet/materialintro/IntroAnimation;)V
 	public final fun setEventListener (Lcom/androidpoet/materialintro/MaterialIntroFragment$IndexEventListener;)V
 	public final fun setFragmentsList (Ljava/util/List;)V
 }
@@ -43,9 +65,8 @@ public abstract interface class com/androidpoet/materialintro/MaterialIntroFragm
 
 public final class com/androidpoet/materialintro/MaterialIntroView : android/widget/FrameLayout {
 	public fun <init> (Landroid/content/Context;Landroid/util/AttributeSet;)V
-	public final fun activity (Landroid/content/Context;)Landroidx/appcompat/app/AppCompatActivity;
-	public final fun next (Landroidx/transition/Transition;)V
-	public final fun previous (Landroidx/transition/Transition;)V
+	public final fun next (Lcom/androidpoet/materialintro/IntroAnimation;)V
+	public final fun previous (Lcom/androidpoet/materialintro/IntroAnimation;)V
 	public final fun setEventListener (Lcom/androidpoet/materialintro/MaterialIntroView$IndexEventListener;)V
 	public final fun setViewsList (Ljava/util/List;)V
 }

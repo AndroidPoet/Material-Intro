@@ -4,7 +4,7 @@ package com.androidpoet.materialintrodemo
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.androidpoet.materialintro.Animation
+import com.androidpoet.materialintro.IntroAnimation
 import com.androidpoet.materialintro.MaterialIntroFragment
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.tabs.TabLayout
@@ -46,12 +46,12 @@ class FragmentActivity : AppCompatActivity() {
 
     //  go next view with animation
     next.setOnClickListener {
-      materialIntroView.next(Animation.MaterialFade)
+      materialIntroView.next(IntroAnimation.MaterialFade)
     }
 
     //  go previous view with animation
     prev.setOnClickListener {
-      materialIntroView.previous(Animation.MaterialFade)
+      materialIntroView.previous(IntroAnimation.MaterialFade)
     }
   }
 
