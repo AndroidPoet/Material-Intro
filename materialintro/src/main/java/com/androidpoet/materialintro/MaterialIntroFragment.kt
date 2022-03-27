@@ -3,6 +3,7 @@ package com.androidpoet.materialintro
 
 import android.content.Context
 import android.util.AttributeSet
+import android.view.View
 import android.widget.FrameLayout
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
@@ -38,6 +39,15 @@ public class MaterialIntroFragment(context: Context, attrs: AttributeSet) :
    * Index change EventListener
    */
   private var mEventListener: IndexEventListener? = null
+
+  init {
+    // inflate(context, R.layout.intro_view, this)
+
+    val v: View = inflate(context, R.layout.materialintro, this)
+//
+//        val attributes = context.obtainStyledAttributes(attrs, R.styleable.MaterialIntroView)
+//        attributes.recycle()
+  }
 
   /**
    * go to previous fragment
@@ -101,22 +111,31 @@ public class MaterialIntroFragment(context: Context, attrs: AttributeSet) :
 
   private fun showFragment(fragment: Fragment, introAnimation: IntroAnimation) {
 
-    if (introAnimation == IntroAnimation.MaterialFadeThrough) {
-      fragment.metaphorMaterialFadeThroughInFragment()
-    } else if (introAnimation == IntroAnimation.MaterialFade) {
-      fragment.metaphorMaterialFadeThroughInFragment()
-    } else if (introAnimation == IntroAnimation.MaterialSharedXAxisForeword) {
-      fragment.metaphorMaterialSharedAxisInFragment(Metaphor.SharedX, true)
-    } else if (introAnimation == IntroAnimation.MaterialSharedYAxisForeword) {
-      fragment.metaphorMaterialSharedAxisInFragment(Metaphor.SharedY, true)
-    } else if (introAnimation == IntroAnimation.MaterialSharedZAxisForeword) {
-      fragment.metaphorMaterialSharedAxisInFragment(Metaphor.SharedZ, true)
-    } else if (introAnimation == IntroAnimation.MaterialSharedXAxisBackward) {
-      fragment.metaphorMaterialSharedAxisInFragment(Metaphor.SharedX, false)
-    } else if (introAnimation == IntroAnimation.MaterialSharedYAxisBackward) {
-      fragment.metaphorMaterialSharedAxisInFragment(Metaphor.SharedY, false)
-    } else if (introAnimation == IntroAnimation.MaterialSharedZAxisBackward) {
-      fragment.metaphorMaterialSharedAxisInFragment(Metaphor.SharedZ, false)
+    when (introAnimation) {
+      IntroAnimation.MaterialFadeThrough -> {
+        fragment.metaphorMaterialFadeThroughInFragment()
+      }
+      IntroAnimation.MaterialFade -> {
+        fragment.metaphorMaterialFadeThroughInFragment()
+      }
+      IntroAnimation.MaterialSharedXAxisForeword -> {
+        fragment.metaphorMaterialSharedAxisInFragment(Metaphor.SharedX, true)
+      }
+      IntroAnimation.MaterialSharedYAxisForeword -> {
+        fragment.metaphorMaterialSharedAxisInFragment(Metaphor.SharedY, true)
+      }
+      IntroAnimation.MaterialSharedZAxisForeword -> {
+        fragment.metaphorMaterialSharedAxisInFragment(Metaphor.SharedZ, true)
+      }
+      IntroAnimation.MaterialSharedXAxisBackward -> {
+        fragment.metaphorMaterialSharedAxisInFragment(Metaphor.SharedX, false)
+      }
+      IntroAnimation.MaterialSharedYAxisBackward -> {
+        fragment.metaphorMaterialSharedAxisInFragment(Metaphor.SharedY, false)
+      }
+      IntroAnimation.MaterialSharedZAxisBackward -> {
+        fragment.metaphorMaterialSharedAxisInFragment(Metaphor.SharedZ, false)
+      }
     }
 
     /**
