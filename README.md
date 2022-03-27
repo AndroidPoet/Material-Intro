@@ -156,6 +156,21 @@ dependencies {
 		
 	
 	
+## Supported Animations
+	
+```kotlin
+
+ IntroAnimation.MaterialSharedXAxisForeword
+ IntroAnimation.MaterialSharedYAxisForeword 
+ IntroAnimation.MaterialSharedZAxisForeword
+ IntroAnimation.MaterialSharedXAxisBackward 
+ IntroAnimation.MaterialSharedYAxisBackward 
+ IntroAnimation.MaterialSharedZAxisBackward
+ IntroAnimation.MaterialFade 
+ IntroAnimation.MaterialFadeThrough
+	
+```	
+	
 	
 ## MaterialFade
 	
