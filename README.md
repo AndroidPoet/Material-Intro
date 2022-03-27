@@ -12,7 +12,7 @@ Sophisticated and cool intro with Material Motion Animations.
 
 
 <p align="center">
-  <a href="https://devlibrary.withgoogle.com/products/android/repos/androidpoet-Metaphor"><img alt="Google" src="https://github.com/AndroidPoet/androidpoet.github.io/blob/main/badges/GoogleDevelopers.svg"/></a>
+  <a href="https://devlibrary.withgoogle.com/authors/androidpoet"><img alt="Google" src="https://github.com/AndroidPoet/androidpoet.github.io/blob/main/badges/GoogleDevelopers.svg"/></a>
 <br>
 	<br>
   <a href="https://opensource.org/licenses/Apache-2.0"><img alt="License" src="https://img.shields.io/badge/License-Apache%202.0-blue.svg"/></a>
@@ -98,7 +98,7 @@ dependencies {
 ```	
 	
 
-## SetUp for Fragment
+## SetUp for Fragments
 
 
 ```kotlin

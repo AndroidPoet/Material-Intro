@@ -46,12 +46,12 @@ class FragmentActivity : AppCompatActivity() {
 
     //  go next view with animation
     next.setOnClickListener {
-      materialIntroView.next(IntroAnimation.MaterialFade)
+      materialIntroView.next(IntroAnimation.MaterialSharedXAxisForeword)
     }
 
     //  go previous view with animation
     prev.setOnClickListener {
-      materialIntroView.previous(IntroAnimation.MaterialFade)
+      materialIntroView.previous(IntroAnimation.MaterialSharedYAxisForeword)
     }
   }
 
