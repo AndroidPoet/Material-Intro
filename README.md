@@ -144,7 +144,8 @@ IntroAnimation.ElevationScale
 ```
 
 ## Create using Builder
-We can create the MaterialIntro using MaterialIntro.Builder.
+
+This is how to create an instance of the MaterialIntro using kotlin dsl.
 
 ```kotlin
 val meta = materialIntroFragment(this) {
@@ -164,7 +165,7 @@ meta.next()
 meta.previous()
 meta.setFragmentsList(list)
 ```
-This is how to create an instance of the MaterialIntro using kotlin dsl.
+We can create the MaterialIntro using MaterialIntro.Builder.
 ```kotlin
 val meta = MaterialIntroFragment.Builder(this)
 .setEnterAnimation(IntroAnimation.Fade)
