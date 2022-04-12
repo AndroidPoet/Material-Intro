@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/AndroidProjects/MaterialIntro/app/src/main/res/layout/activity_fragment.xml" value="0.1" />
+        <entry key="..\:/AndroidProjects/MaterialIntro/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/AndroidProjects/MaterialIntro/materialintro/src/main/res/layout/materialintro.xml" value="0.1" />
         <entry key="..\:/AndroidProjects/MaterialIntroDemo/app/src/main/res/drawable/ic_launcher_background.xml" value="0.194" />
         <entry key="..\:/AndroidProjects/MaterialIntroDemo/app/src/main/res/drawable/tab_dot.xml" value="0.194" />
         <entry key="..\:/AndroidProjects/MaterialIntroDemo/app/src/main/res/drawable/tab_dot_background.xml" value="0.2055" />

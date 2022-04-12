@@ -1,23 +1,23 @@
 
 
-<h1 align="center">Material Intro </h1></br>
+<h1 align="center">Material Intro </h1>
 
 <p align="center">
 Sophisticated and cool intro with Material Motion Animations.
 </p>
-</br>
+
 
 
 
 
 
 <p align="center">
-  <a href="https://devlibrary.withgoogle.com/authors/androidpoet"><img alt="Google" src="https://github.com/AndroidPoet/androidpoet.github.io/blob/main/badges/GoogleDevelopers.svg"/></a>
+  <a href="https://devlibrary.withgoogle.com/authors/androidpoet"><img alt="Google" src="https://user-images.githubusercontent.com/13647384/162663007-d911f6ce-ac1b-4754-a63b-eadbef38087f.svg"/></a>
 <br>
 	<br>
   <a href="https://opensource.org/licenses/Apache-2.0"><img alt="License" src="https://img.shields.io/badge/License-Apache%202.0-blue.svg"/></a>
-  <a href="https://github.com/AndroidPoet"><img alt="Profile" src="https://github.com/AndroidPoet/androidpoet.github.io/blob/main/badges/style-AndroidPoet-blue.svg"/></a>
- 
+  <a href="https://github.com/AndroidPoet"><img alt="Profile" src="https://user-images.githubusercontent.com/13647384/162662962-82e3c1eb-baf8-4e21-ad26-d4c4e3c31e44.svg"/></a>
+
 </p> <br>
 
 
@@ -41,159 +41,142 @@ Add the dependency below to your **module**'s `build.gradle` file:
 
 ```gradle
 dependencies {
-    implementation("io.github.androidpoet:materialintro:1.0.4")
+    implementation("io.github.androidpoet:materialintro:1.0.5")
 }
 ```
 
-	
+
 ## SetUp for Views
 
 
-```kotlin
+```xml
 
-   <com.androidpoet.materialintro.MaterialIntroView
-        android:id="@+id/materialintroView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    </com.androidpoet.materialintro.MaterialIntroView>
-	
-	///create object for MaterialIntroView
-	var materialIntroView: MaterialIntroView
-	 materialIntroView = findViewById(R.id.materialintroView)
-	//add views into list
-   list.add(R.layout.layout_one)
-    list.add(R.layout.layout_two)
-    list.add(R.layout.layout_three)
+<com.androidpoet.materialintro.MaterialIntroView
+android:id="@+id/materialintroView"
+android:layout_width="match_parent"
+android:layout_height="match_parent">
+</com.androidpoet.materialintro.MaterialIntroView>
+```
 
-    //set list of views
-    materialIntroView.setViewsList(list = list)
-	
-	
-	
-	//  go to next view with animation
-    next.setOnClickListener {
-      materialIntroView.next(IntroAnimation.MaterialFade)
-    }
+//add views into list
+list.add(FragmentOne())
+list.add(FragmentTwo())
+list.add(FragmentThree())
 
-    //  go to previous view with animation
-    prev.setOnClickListener {
-      materialIntroView.previous(IntroAnimation.MaterialFade)
-    }
-	
-  // interface for the observing current index 	
- materialIntroView.setEventListener(object : IndexEventListener {
-      override fun onIndexChanged(index: Int) {
-        next.isEnabled = index < list.size - 1
-        prev.isEnabled = index > 0
-        tabLayout.apply {
-          selectTab(getTabAt(index))
-        }
-      }
-    })	
-	
-	
-	
-	
-	
-```	
-	
+binding.materialIntroFragment.apply {
+    setFragmentsList(list)
+    enterAnimation = IntroAnimation.SharedAxisXForward
+    reenterAnimation = IntroAnimation.SharedAxisXBackward
+    enterDuration = 500
+    exitDuration = 500
+}
+
+
+//  go next view with animation
+binding.nextButton.setOnClickListener {
+    binding.materialIntroFragment.next()
+}
+
+//  go previous view with animation
+binding.backButton.setOnClickListener {
+    binding.materialIntroFragment.previous()
+}
+
+
+
+
+
+```
+
 
 ## SetUp for Fragments
 
 
+
+```xml
+<com.androidpoet.materialintro.MaterialIntroFragment
+android:id="@+id/materialintroView"
+android:layout_width="match_parent"
+android:layout_height="match_parent">
+</com.androidpoet.materialintro.MaterialIntroFragment>
+```
+
+
 ```kotlin
 
-
-    <com.androidpoet.materialintro.MaterialIntroFragment
-        android:id="@+id/materialintroView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    </com.androidpoet.materialintro.MaterialIntroFragment>
-
-	
-	///create object for MaterialIntroView
-	var materialIntroView: MaterialIntroView
-	 materialIntroView = findViewById(R.id.materialintroView)
-	
-	
     list.add(FragmentOne())
-    list.add(FragmentTwo())
-    list.add(FragmentThree())
+list.add(FragmentTwo())
+list.add(FragmentThree())
+with(binding.materialintroView) {
+    setViewsList(list)
+    nextAnimation = IntroAnimation.Fade
+    previousAnimation = IntroAnimation.Fade
+    nextDuration = 500
+    previousDuration = 500
+}
 
 
-    // /set list of views
-    materialIntroView.setFragmentsList(list = list)
-	
-	
-	
-	//  go to next view with animation
-    next.setOnClickListener {
-      materialIntroView.next(IntroAnimation.MaterialFade)
-    }
+//  go next view with animation
+binding.nextButton.setOnClickListener {
+    binding.materialintroView.next()
+}
 
-    //  go to previous view with animation
-    prev.setOnClickListener {
-      materialIntroView.previous(IntroAnimation.MaterialFade)
-    }
-	
-	
-    // interface for the observing current index 	
-    materialIntroView.setEventListener(object : MaterialIntroFragment.IndexEventListener {
-      override fun onIndexChanged(index: Int) {
-        next.isEnabled = index < list.size - 1
-        prev.isEnabled = index > 0
-        tabLayout.apply {
-          selectTab(getTabAt(index))
-        }
-      }
-    })
-	
-	
-	
-	
-	
-```	
-		
-	
-	
+//  go previous view with animation
+binding.backButton.setOnClickListener {
+    binding.materialintroView.previous()
+}
+
+
+
+
+```
+
+
+
 ## Supported Animations
-	
+
 ```kotlin
 
- IntroAnimation.MaterialSharedXAxisForeword
- IntroAnimation.MaterialSharedYAxisForeword 
- IntroAnimation.MaterialSharedZAxisForeword
- IntroAnimation.MaterialSharedXAxisBackward 
- IntroAnimation.MaterialSharedYAxisBackward 
- IntroAnimation.MaterialSharedZAxisBackward
- IntroAnimation.MaterialFade 
- IntroAnimation.MaterialFadeThrough
-	
-```	
-	
-	
-## MaterialFade
-	
-<p align="center">
-	<img src="https://user-images.githubusercontent.com/13647384/159129150-2b75f746-3982-4ed9-8b4a-f7936dc6a9fb.gif" width="30%"  />
+IntroAnimation.None
+IntroAnimation.FadeThrough
+IntroAnimation.Fade
+IntroAnimation.SharedAxisXForward
+IntroAnimation.SharedAxisYForward
+IntroAnimation.SharedAxisZForward
+IntroAnimation.SharedAxisXBackward
+IntroAnimation.SharedAxisYBackward
+IntroAnimation.SharedAxisZBackward
+IntroAnimation.ElevationScaleGrow
+IntroAnimation.ElevationScale
 
-</p> <br>	
-	
+
+
+
+```
+
+
+## MaterialFade
+
+<p align="center">
+<img src="https://user-images.githubusercontent.com/13647384/159129150-2b75f746-3982-4ed9-8b4a-f7936dc6a9fb.gif" width="30%"  />
+
+</p> <br>
+
 
 ## Fade
-	
-<p align="center">
-	<img src="https://user-images.githubusercontent.com/13647384/159129501-e7af0b29-ff54-4853-8f2f-566c8132af3b.gif" width="30%"  />
 
-</p> <br>	
-	
+<p align="center">
+<img src="https://user-images.githubusercontent.com/13647384/159129501-e7af0b29-ff54-4853-8f2f-566c8132af3b.gif" width="30%"  />
+
+</p> <br>
+
 ## SharedAxis
-	
-<p align="center">
-	<img src="https://user-images.githubusercontent.com/13647384/159129757-4706821f-a86d-443b-8db3-5d88f6aee841.gif" width="30%"  />
 
-</p> <br>	
-		
+<p align="center">
+<img src="https://user-images.githubusercontent.com/13647384/159129757-4706821f-a86d-443b-8db3-5d88f6aee841.gif" width="30%"  />
+
+</p> <br>
+
 
 <a href="https://www.flaticon.com/free-icons/card" title="card icons">Card icons created by Freepik - Flaticon</a>
 
@@ -210,13 +193,13 @@ Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
 
-   http://www.apache.org/licenses/LICENSE-2.0
+http://www.apache.org/licenses/LICENSE-2.0
 
 Unless required by applicable law or agreed to in writing, software
 distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
-limitations under the License.
+        limitations under the License.
 ```
 
 
