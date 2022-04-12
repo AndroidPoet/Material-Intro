@@ -58,6 +58,7 @@ android:layout_height="match_parent">
 </com.androidpoet.materialintro.MaterialIntroView>
 ```
 
+```kotlin
 //add views into list
 list.add(FragmentOne())
 list.add(FragmentTwo())
@@ -81,12 +82,8 @@ binding.nextButton.setOnClickListener {
 binding.backButton.setOnClickListener {
     binding.materialIntroFragment.previous()
 }
-
-
-
-
-
 ```
+
 
 
 ## SetUp for Fragments
