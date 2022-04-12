@@ -4,62 +4,55 @@ package com.androidpoet.materialintrodemo
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.androidpoet.materialintro.IntroAnimation
-import com.androidpoet.materialintro.MaterialIntroFragment
-import com.google.android.material.button.MaterialButton
-import com.google.android.material.tabs.TabLayout
+import com.androidpoet.materialintrodemo.databinding.ActivityFragmentBinding
+import com.androidpoet.metaphor.IntroAnimation
 
 class FragmentActivity : AppCompatActivity() {
-  private lateinit var materialIntroView: MaterialIntroFragment
-  private lateinit var next: MaterialButton
-  private lateinit var prev: MaterialButton
-  private lateinit var tabLayout: TabLayout
+  private lateinit var binding: ActivityFragmentBinding
   private var list: MutableList<Fragment> = arrayListOf()
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
-    setContentView(R.layout.activity_fragment)
-    materialIntroView = findViewById(R.id.materialintroView)
-    next = findViewById(R.id.next_button)
-    prev = findViewById(R.id.back_button)
+    binding = ActivityFragmentBinding.inflate(layoutInflater)
+    setContentView(binding.root)
 
     list.add(FragmentOne())
     list.add(FragmentTwo())
     list.add(FragmentThree())
 
-    tabLayout = findViewById(R.id.tab_layout)
-
-    // /set list of views
-    materialIntroView.setFragmentsList(list = list)
+    binding.materialIntroFragment.apply {
+      setFragmentsList(list)
+      enterAnimation = IntroAnimation.SharedAxisXForward
+      reenterAnimation = IntroAnimation.SharedAxisXBackward
+      enterDuration = 500
+      exitDuration = 500
+    }
 
     setDotsTabLayout()
 
-    // interface for the observing
-    materialIntroView.setEventListener(object : MaterialIntroFragment.IndexEventListener {
-      override fun onIndexChanged(index: Int) {
-        next.isEnabled = index < list.size - 1
-        prev.isEnabled = index > 0
-        tabLayout.apply {
-          selectTab(getTabAt(index))
-        }
+    binding.materialIntroFragment.setOnIndexChangeListener {
+      binding.nextButton.isEnabled = it < list.size - 1
+      binding.backButton.isEnabled = it > 0
+      binding.tabLayout.apply {
+        selectTab(getTabAt(it))
       }
-    })
-
-    //  go next view with animation
-    next.setOnClickListener {
-      materialIntroView.next(IntroAnimation.MaterialSharedXAxisForeword)
     }
 
-    //  go previous view with animation
-    prev.setOnClickListener {
-      materialIntroView.previous(IntroAnimation.MaterialSharedYAxisForeword)
+//  go next view with animation
+    binding.nextButton.setOnClickListener {
+      binding.materialIntroFragment.next()
+    }
+
+//  go previous view with animation
+    binding.backButton.setOnClickListener {
+      binding.materialIntroFragment.previous()
     }
   }
 
   private fun setDotsTabLayout() {
 
     list.forEach { _ ->
-      tabLayout.addTab(tabLayout.newTab())
+      binding.tabLayout.addTab(binding.tabLayout.newTab())
     }
-    tabLayout.touchables.forEach { it.isEnabled = false }
+    binding.tabLayout.touchables.forEach { it.isEnabled = false }
   }
 }

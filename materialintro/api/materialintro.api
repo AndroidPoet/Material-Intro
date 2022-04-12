@@ -1,3 +1,8 @@
+public final class com/androidpoet/materialintro/AnimationsExtenstionsKt {
+	public static final fun activity (Landroid/content/Context;)Landroidx/appcompat/app/AppCompatActivity;
+	public static final fun showScene (ILcom/androidpoet/metaphor/IntroAnimation;JLandroid/view/ViewGroup;)V
+}
+
 public final class com/androidpoet/materialintro/BuildConfig {
 	public static final field BUILD_TYPE Ljava/lang/String;
 	public static final field DEBUG Z
@@ -5,73 +10,131 @@ public final class com/androidpoet/materialintro/BuildConfig {
 	public fun <init> ()V
 }
 
-public abstract class com/androidpoet/materialintro/IntroAnimation {
-}
-
-public final class com/androidpoet/materialintro/IntroAnimation$MaterialFade : com/androidpoet/materialintro/IntroAnimation {
-	public static final field INSTANCE Lcom/androidpoet/materialintro/IntroAnimation$MaterialFade;
-}
-
-public final class com/androidpoet/materialintro/IntroAnimation$MaterialFadeThrough : com/androidpoet/materialintro/IntroAnimation {
-	public static final field INSTANCE Lcom/androidpoet/materialintro/IntroAnimation$MaterialFadeThrough;
-}
-
-public final class com/androidpoet/materialintro/IntroAnimation$MaterialSharedXAxisBackward : com/androidpoet/materialintro/IntroAnimation {
-	public static final field INSTANCE Lcom/androidpoet/materialintro/IntroAnimation$MaterialSharedXAxisBackward;
-}
-
-public final class com/androidpoet/materialintro/IntroAnimation$MaterialSharedXAxisForeword : com/androidpoet/materialintro/IntroAnimation {
-	public static final field INSTANCE Lcom/androidpoet/materialintro/IntroAnimation$MaterialSharedXAxisForeword;
-}
-
-public final class com/androidpoet/materialintro/IntroAnimation$MaterialSharedYAxisBackward : com/androidpoet/materialintro/IntroAnimation {
-	public static final field INSTANCE Lcom/androidpoet/materialintro/IntroAnimation$MaterialSharedYAxisBackward;
-}
-
-public final class com/androidpoet/materialintro/IntroAnimation$MaterialSharedYAxisForeword : com/androidpoet/materialintro/IntroAnimation {
-	public static final field INSTANCE Lcom/androidpoet/materialintro/IntroAnimation$MaterialSharedYAxisForeword;
-}
-
-public final class com/androidpoet/materialintro/IntroAnimation$MaterialSharedZAxisBackward : com/androidpoet/materialintro/IntroAnimation {
-	public static final field INSTANCE Lcom/androidpoet/materialintro/IntroAnimation$MaterialSharedZAxisBackward;
-}
-
-public final class com/androidpoet/materialintro/IntroAnimation$MaterialSharedZAxisForeword : com/androidpoet/materialintro/IntroAnimation {
-	public static final field INSTANCE Lcom/androidpoet/materialintro/IntroAnimation$MaterialSharedZAxisForeword;
-}
-
-public final class com/androidpoet/materialintro/MaterialIntroExtensionKt {
-	public static final fun activity (Landroid/content/Context;)Landroidx/appcompat/app/AppCompatActivity;
-	public static final fun addFade (Landroid/content/Context;)Landroidx/transition/Fade;
-	public static final fun addMaterialFade (Landroid/content/Context;)Lcom/google/android/material/transition/MaterialFade;
-	public static final fun addMaterialFadeThrough (Landroid/content/Context;)Lcom/google/android/material/transition/MaterialFadeThrough;
-	public static final fun addSharedAxis (Landroid/content/Context;IZ)Lcom/google/android/material/transition/MaterialSharedAxis;
-	public static final fun getTransition (Landroid/content/Context;Lcom/androidpoet/materialintro/IntroAnimation;)Landroidx/transition/Transition;
-	public static final fun showScene (Landroid/content/Context;ILandroidx/transition/Transition;Landroid/view/ViewGroup;)V
-	public static synthetic fun showScene$default (Landroid/content/Context;ILandroidx/transition/Transition;Landroid/view/ViewGroup;ILjava/lang/Object;)V
+public final class com/androidpoet/materialintro/IntroInterpolator : java/lang/Enum {
+	public static final field Accelerated Lcom/androidpoet/materialintro/IntroInterpolator;
+	public static final field Decelerated Lcom/androidpoet/materialintro/IntroInterpolator;
+	public static final field Emphasized Lcom/androidpoet/materialintro/IntroInterpolator;
+	public static final field Linear Lcom/androidpoet/materialintro/IntroInterpolator;
+	public static final field Standard Lcom/androidpoet/materialintro/IntroInterpolator;
+	public final fun getValue ()I
+	public static fun valueOf (Ljava/lang/String;)Lcom/androidpoet/materialintro/IntroInterpolator;
+	public static fun values ()[Lcom/androidpoet/materialintro/IntroInterpolator;
 }
 
 public final class com/androidpoet/materialintro/MaterialIntroFragment : android/widget/FrameLayout {
+	public fun <init> (Landroid/content/Context;)V
 	public fun <init> (Landroid/content/Context;Landroid/util/AttributeSet;)V
-	public final fun next (Lcom/androidpoet/materialintro/IntroAnimation;)V
-	public final fun previous (Lcom/androidpoet/materialintro/IntroAnimation;)V
-	public final fun setEventListener (Lcom/androidpoet/materialintro/MaterialIntroFragment$IndexEventListener;)V
+	public fun <init> (Landroid/content/Context;Landroid/util/AttributeSet;I)V
+	public final fun getEnterAnimation ()Lcom/androidpoet/metaphor/IntroAnimation;
+	public final fun getEnterDuration ()J
+	public final fun getEnterTransitionOverlap ()Z
+	public final fun getExitAnimation ()Lcom/androidpoet/metaphor/IntroAnimation;
+	public final fun getExitDuration ()J
+	public final fun getReenterAnimation ()Lcom/androidpoet/metaphor/IntroAnimation;
+	public final fun getReenterDuration ()J
+	public final fun getReturnAnimation ()Lcom/androidpoet/metaphor/IntroAnimation;
+	public final fun getReturnDuration ()J
+	public final fun getReturnTransitionOverlap ()Z
+	public final fun next ()V
+	public final fun previous ()V
+	public final fun setEnterAnimation (Lcom/androidpoet/metaphor/IntroAnimation;)V
+	public final fun setEnterDuration (J)V
+	public final fun setEnterTransitionOverlap (Z)V
+	public final fun setExitAnimation (Lcom/androidpoet/metaphor/IntroAnimation;)V
+	public final fun setExitDuration (J)V
 	public final fun setFragmentsList (Ljava/util/List;)V
+	public final fun setOnIndexChangeListener (Lcom/androidpoet/materialintro/OnIndexChangeListener;)V
+	public final synthetic fun setOnIndexChangeListener (Lkotlin/jvm/functions/Function1;)V
+	public final fun setReenterAnimation (Lcom/androidpoet/metaphor/IntroAnimation;)V
+	public final fun setReenterDuration (J)V
+	public final fun setReturnAnimation (Lcom/androidpoet/metaphor/IntroAnimation;)V
+	public final fun setReturnDuration (J)V
+	public final fun setReturnTransitionOverlap (Z)V
 }
 
-public abstract interface class com/androidpoet/materialintro/MaterialIntroFragment$IndexEventListener {
-	public abstract fun onIndexChanged (I)V
+public final class com/androidpoet/materialintro/MaterialIntroFragment$Builder {
+	public fun <init> (Landroid/content/Context;)V
+	public final fun build ()Lcom/androidpoet/materialintro/MaterialIntroFragment;
+	public final fun setEnterAnimation (Lcom/androidpoet/metaphor/IntroAnimation;)Lcom/androidpoet/materialintro/MaterialIntroFragment$Builder;
+	public final fun setEnterDuration (J)Lcom/androidpoet/materialintro/MaterialIntroFragment$Builder;
+	public final fun setEnterOverlap (Z)Lcom/androidpoet/materialintro/MaterialIntroFragment$Builder;
+	public final fun setExitAnimation (Lcom/androidpoet/metaphor/IntroAnimation;)Lcom/androidpoet/materialintro/MaterialIntroFragment$Builder;
+	public final fun setExitDuration (J)Lcom/androidpoet/materialintro/MaterialIntroFragment$Builder;
+	public final fun setFragmentList (Ljava/util/ArrayList;)Lcom/androidpoet/materialintro/MaterialIntroFragment$Builder;
+	public final fun setOnIndexChangeListener (Lcom/androidpoet/materialintro/OnIndexChangeListener;)Lcom/androidpoet/materialintro/MaterialIntroFragment$Builder;
+	public final synthetic fun setOnIndexChangeListener (Lkotlin/jvm/functions/Function1;)Lcom/androidpoet/materialintro/MaterialIntroFragment$Builder;
+	public final fun setReenterAnimation (Lcom/androidpoet/metaphor/IntroAnimation;)Lcom/androidpoet/materialintro/MaterialIntroFragment$Builder;
+	public final fun setReenterDuration (J)Lcom/androidpoet/materialintro/MaterialIntroFragment$Builder;
+	public final fun setReturnAnimation (Lcom/androidpoet/metaphor/IntroAnimation;)Lcom/androidpoet/materialintro/MaterialIntroFragment$Builder;
+	public final fun setReturnDuration (J)Lcom/androidpoet/materialintro/MaterialIntroFragment$Builder;
+	public final fun setReturnOverlap (Z)Lcom/androidpoet/materialintro/MaterialIntroFragment$Builder;
+}
+
+public final class com/androidpoet/materialintro/MaterialIntroFragmentKt {
+	public static final synthetic fun materialIntroFragment (Landroid/content/Context;Lkotlin/jvm/functions/Function1;)Lcom/androidpoet/materialintro/MaterialIntroFragment;
 }
 
 public final class com/androidpoet/materialintro/MaterialIntroView : android/widget/FrameLayout {
+	public fun <init> (Landroid/content/Context;)V
 	public fun <init> (Landroid/content/Context;Landroid/util/AttributeSet;)V
-	public final fun next (Lcom/androidpoet/materialintro/IntroAnimation;)V
-	public final fun previous (Lcom/androidpoet/materialintro/IntroAnimation;)V
-	public final fun setEventListener (Lcom/androidpoet/materialintro/MaterialIntroView$IndexEventListener;)V
+	public fun <init> (Landroid/content/Context;Landroid/util/AttributeSet;I)V
+	public final fun getEnterTransitionOverlap ()Z
+	public final fun getIndex ()I
+	public final fun getLayoutList ()Ljava/util/ArrayList;
+	public final fun getNextAnimation ()Lcom/androidpoet/metaphor/IntroAnimation;
+	public final fun getNextDuration ()J
+	public final fun getPreviousAnimation ()Lcom/androidpoet/metaphor/IntroAnimation;
+	public final fun getPreviousDuration ()J
+	public final fun getReturnTransitionOverlap ()Z
+	public final fun next ()V
+	public final fun previous ()V
+	public final fun setEnterTransitionOverlap (Z)V
+	public final fun setIndex (I)V
+	public final fun setLayoutList (Ljava/util/ArrayList;)V
+	public final fun setNextAnimation (Lcom/androidpoet/metaphor/IntroAnimation;)V
+	public final fun setNextDuration (J)V
+	public final fun setOnIndexChangeListener (Lcom/androidpoet/materialintro/OnIndexChangeListener;)V
+	public final synthetic fun setOnIndexChangeListener (Lkotlin/jvm/functions/Function1;)V
+	public final fun setPreviousAnimation (Lcom/androidpoet/metaphor/IntroAnimation;)V
+	public final fun setPreviousDuration (J)V
+	public final fun setReturnTransitionOverlap (Z)V
 	public final fun setViewsList (Ljava/util/List;)V
 }
 
-public abstract interface class com/androidpoet/materialintro/MaterialIntroView$IndexEventListener {
-	public abstract fun onIndexChanged (I)V
+public final class com/androidpoet/materialintro/MaterialIntroView$Builder {
+	public fun <init> (Landroid/content/Context;)V
+	public final fun build ()Lcom/androidpoet/materialintro/MaterialIntroView;
+	public final fun setEnterDuration (J)Lcom/androidpoet/materialintro/MaterialIntroView$Builder;
+	public final fun setExitDuration (J)Lcom/androidpoet/materialintro/MaterialIntroView$Builder;
+	public final fun setNextAnimation (Lcom/androidpoet/metaphor/IntroAnimation;)Lcom/androidpoet/materialintro/MaterialIntroView$Builder;
+	public final fun setOnIndexChangeListener (Lcom/androidpoet/materialintro/OnIndexChangeListener;)Lcom/androidpoet/materialintro/MaterialIntroView$Builder;
+	public final synthetic fun setOnIndexChangeListener (Lkotlin/jvm/functions/Function1;)Lcom/androidpoet/materialintro/MaterialIntroView$Builder;
+	public final fun setPreviousAnimation (Lcom/androidpoet/metaphor/IntroAnimation;)Lcom/androidpoet/materialintro/MaterialIntroView$Builder;
+	public final fun setViewsList (Ljava/util/ArrayList;)Lcom/androidpoet/materialintro/MaterialIntroView$Builder;
+}
+
+public final class com/androidpoet/materialintro/MaterialIntroViewKt {
+	public static final synthetic fun materialIntroView (Landroid/content/Context;Lkotlin/jvm/functions/Function1;)Lcom/androidpoet/materialintro/MaterialIntroView;
+}
+
+public abstract interface class com/androidpoet/materialintro/OnIndexChangeListener {
+	public abstract fun onChange (I)V
+}
+
+public final class com/androidpoet/metaphor/IntroAnimation : java/lang/Enum {
+	public static final field ElevationScale Lcom/androidpoet/metaphor/IntroAnimation;
+	public static final field ElevationScaleGrow Lcom/androidpoet/metaphor/IntroAnimation;
+	public static final field Fade Lcom/androidpoet/metaphor/IntroAnimation;
+	public static final field FadeThrough Lcom/androidpoet/metaphor/IntroAnimation;
+	public static final field None Lcom/androidpoet/metaphor/IntroAnimation;
+	public static final field SharedAxisXBackward Lcom/androidpoet/metaphor/IntroAnimation;
+	public static final field SharedAxisXForward Lcom/androidpoet/metaphor/IntroAnimation;
+	public static final field SharedAxisYBackward Lcom/androidpoet/metaphor/IntroAnimation;
+	public static final field SharedAxisYForward Lcom/androidpoet/metaphor/IntroAnimation;
+	public static final field SharedAxisZBackward Lcom/androidpoet/metaphor/IntroAnimation;
+	public static final field SharedAxisZForward Lcom/androidpoet/metaphor/IntroAnimation;
+	public final fun getValue ()I
+	public static fun valueOf (Ljava/lang/String;)Lcom/androidpoet/metaphor/IntroAnimation;
+	public static fun values ()[Lcom/androidpoet/metaphor/IntroAnimation;
 }
 

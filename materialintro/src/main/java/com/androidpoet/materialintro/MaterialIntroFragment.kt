@@ -5,144 +5,213 @@ import android.content.Context
 import android.util.AttributeSet
 import android.view.View
 import android.widget.FrameLayout
+import androidx.annotation.MainThread
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
-import com.androidpoet.metaphor.Metaphor
-import com.androidpoet.metaphor.metaphorMaterialFadeThroughInFragment
-import com.androidpoet.metaphor.metaphorMaterialSharedAxisInFragment
+import com.androidpoet.metaphor.IntroAnimation
+
+@DslMarker
+internal annotation class MaterialFragmentInlineDsl
 
 /**
- *Custom root View for  layouts
- */
-public class MaterialIntroFragment(context: Context, attrs: AttributeSet) :
-  FrameLayout(context, attrs) {
+ * Creates an instance of the [MaterialIntroFragment] by scope of the [MaterialIntroFragment.Builder] using kotlin dsl.
+ *
+ * @param Context A context for creating resources of the [MaterialIntroFragment].
+ * @param block A dsl scope lambda from the [MaterialIntroFragment.Builder].
+ * */
+@MainThread
+@JvmSynthetic
+@MaterialFragmentInlineDsl
+public inline fun materialIntroFragment(
+  context: Context,
+  crossinline block: MaterialIntroFragment.Builder.() -> Unit
+): MaterialIntroFragment =
+  MaterialIntroFragment.Builder(context).apply(block).build()
 
-  /**
-   *fragmentList list
-   */
+/**
+ * MetaphorFragment implements material motion animations.
+ *
+ * @see [MaterialIntroFragment](https://github.com/AndroidPoet/Metaphor)
+ *
+ * @param builder A [MaterialIntroFragment.Builder] for creating an instance of the [MaterialIntroFragment].
+ */
+public class MaterialIntroFragment : FrameLayout {
+
+  /** duration of enter the animations. */
   private var fragmentList = ArrayList<Fragment>()
 
-  /**
-   *current view index
-   */
+  /**current fragment index */
   private var index: Int = 0
 
-  /**
-   * IndexEvent interface
-   */
+  /** duration of enter the animations. */
+  public var enterDuration: Long = 300
 
-  public interface IndexEventListener {
-    public fun onIndexChanged(index: Int)
+  /** duration of reenter the animations. */
+  public var reenterDuration: Long = 300
+
+  /** duration of exit the animations. */
+  public var exitDuration: Long = 300
+
+  /** duration of return the animations. */
+  public var returnDuration: Long = 300
+
+  /** Enter Animation of  fragment. */
+  public var enterAnimation: IntroAnimation = IntroAnimation.None
+
+  /** Exit Animation of  fragment. */
+  public var exitAnimation: IntroAnimation = IntroAnimation.None
+
+  /** Reenter Animation of  fragment. */
+  public var reenterAnimation: IntroAnimation = IntroAnimation.None
+
+  /** Return Animation of  fragment. */
+  public var returnAnimation: IntroAnimation = IntroAnimation.None
+
+  /**   Enter AnimationOverlap of  fragment. */
+  public var enterTransitionOverlap: Boolean = false
+
+  /**   Return AnimationOverlap of  fragment. */
+  public var returnTransitionOverlap: Boolean = false
+
+  /** interface for listening to the progress is changed. */
+  private var onIndexChangeListener: OnIndexChangeListener? = null
+
+  /** sets a progress change listener. */
+  public fun setOnIndexChangeListener(onIndexChangeListener: OnIndexChangeListener) {
+    this.onIndexChangeListener = onIndexChangeListener
   }
 
-  /**
-   * Index change EventListener
-   */
-  private var mEventListener: IndexEventListener? = null
+  /** sets a progress change listener. */
+  @JvmSynthetic
+  public fun setOnIndexChangeListener(block: (Int) -> Unit) {
+    this.onIndexChangeListener = OnIndexChangeListener { index -> block(index) }
+  }
 
   init {
-    // inflate(context, R.layout.intro_view, this)
-
     val v: View = inflate(context, R.layout.materialintro, this)
-//
-//        val attributes = context.obtainStyledAttributes(attrs, R.styleable.MaterialIntroView)
-//        attributes.recycle()
   }
 
-  /**
-   * go to previous fragment
-   */
-  public fun previous(name: IntroAnimation) {
+  public constructor(context: Context) : super(context)
+
+  public constructor(
+    context: Context,
+    attributeSet: AttributeSet
+  ) : this(context, attributeSet, 0)
+
+  public constructor(
+    context: Context,
+    attributeSet: AttributeSet,
+    defStyle: Int
+  ) : super(
+    context,
+    attributeSet,
+    defStyle
+  ) {
+  }
+
+  /** Builder class for [MaterialIntroView]. */
+  @MaterialIntroViewInlineDsl
+  public class Builder(context: Context) {
+    private val materialIntroFragment = MaterialIntroFragment(context)
+
+    /** sets the duration of the Animation. */
+    public fun setEnterDuration(value: Long): Builder =
+      apply { this.materialIntroFragment.enterDuration = value }
+
+    /** sets the duration of the Animation. */
+    public fun setExitDuration(value: Long): Builder =
+      apply { this.materialIntroFragment.exitDuration = value }
+
+    /** sets the duration of the Animation. */
+    public fun setReenterDuration(value: Long): Builder =
+      apply { this.materialIntroFragment.reenterDuration = value }
+
+    /** sets the duration of the Animation. */
+    public fun setReturnDuration(value: Long): Builder =
+      apply { this.materialIntroFragment.returnDuration = value }
+
+    /** sets enter the Animation of the Fragment. */
+    public fun setEnterAnimation(value: IntroAnimation): Builder =
+      apply { this.materialIntroFragment.enterAnimation = value }
+
+    /** sets the exit Animation of the Fragment. */
+    public fun setExitAnimation(value: IntroAnimation): Builder =
+      apply { this.materialIntroFragment.exitAnimation = value }
+
+    /** sets the return Animation of the Fragment. */
+    public fun setReturnAnimation(value: IntroAnimation): Builder =
+      apply { this.materialIntroFragment.returnAnimation = value }
+
+    /** sets the reenter Animation of the Fragment. */
+    public fun setReenterAnimation(value: IntroAnimation): Builder =
+      apply { this.materialIntroFragment.reenterAnimation = value }
+
+    /** sets the enter Overlap of the Fragment. */
+    public fun setEnterOverlap(value: Boolean): Builder =
+      apply { this.materialIntroFragment.enterTransitionOverlap = value }
+
+    /** sets the return Overlap of the Fragment. */
+    public fun setReturnOverlap(value: Boolean): Builder =
+      apply { this.materialIntroFragment.returnTransitionOverlap = value }
+
+    /** sets the ScrimColor of the Fragment. */
+    public fun setFragmentList(value: ArrayList<Fragment>): Builder =
+      apply { this.materialIntroFragment.fragmentList = value }
+
+    public fun setOnIndexChangeListener(value: OnIndexChangeListener): Builder = apply {
+      this.materialIntroFragment.onIndexChangeListener = value
+    }
+
+    @JvmSynthetic
+    public fun setOnIndexChangeListener(block: (Int) -> Unit): Builder = apply {
+      this.materialIntroFragment.onIndexChangeListener =
+        OnIndexChangeListener { index -> block(index) }
+    }
+
+    public fun build(): MaterialIntroFragment = materialIntroFragment
+  }
+
+  /*go to previous fragment*/
+  public fun previous() {
     if (indexExists(fragmentList, index - 1)) {
       index -= 1
-
-      showFragment(fragmentList[index], name)
+      showFragment(fragmentList[index])
+      onIndexChangeListener?.onChange(index)
     }
-
-    mEventListener?.onIndexChanged(index)
   }
 
-  /**
-   * go to next fragment
-   */
+  /*go to next fragment*/
 
-  public fun next(name: IntroAnimation) {
+  public fun next() {
 
     if (indexExists(fragmentList, index + 1)) {
-      index
       index += 1
-      showFragment(fragmentList[index], name)
-    }
-    mEventListener?.onIndexChanged(index)
-  }
-
-  /**
-   * set views list
-   */
-
-  public fun setFragmentsList(list: List<Fragment>) {
-    fragmentList.clear()
-    fragmentList.addAll(list)
-    if (fragmentList.isNotEmpty()) {
-      context.activity()?.supportFragmentManager?.commit {
-        add(R.id.fragment_container, fragmentList[0])
-      }
+      showFragment(fragmentList[index])
+      onIndexChangeListener?.onChange(index)
     }
   }
 
-  /**
-   * set EventListener
-   */
-
-  public fun setEventListener(mEventListener: IndexEventListener?) {
-    this.mEventListener = mEventListener
-  }
-
-  /**
-   * check index is valid or not
-   */
+  /*check index is valid or not*/
   private fun indexExists(list: List<*>, index: Int): Boolean {
     return index >= 0 && index < list.size
   }
 
-  /**
-   * show Fragment with with animation
-   */
+  /** starts  animation. */
+  private fun showFragment(fragment: Fragment) {
+    fragment.applyAnimation(this)
 
-  private fun showFragment(fragment: Fragment, introAnimation: IntroAnimation) {
-
-    when (introAnimation) {
-      IntroAnimation.MaterialFadeThrough -> {
-        fragment.metaphorMaterialFadeThroughInFragment()
-      }
-      IntroAnimation.MaterialFade -> {
-        fragment.metaphorMaterialFadeThroughInFragment()
-      }
-      IntroAnimation.MaterialSharedXAxisForeword -> {
-        fragment.metaphorMaterialSharedAxisInFragment(Metaphor.SharedX, true)
-      }
-      IntroAnimation.MaterialSharedYAxisForeword -> {
-        fragment.metaphorMaterialSharedAxisInFragment(Metaphor.SharedY, true)
-      }
-      IntroAnimation.MaterialSharedZAxisForeword -> {
-        fragment.metaphorMaterialSharedAxisInFragment(Metaphor.SharedZ, true)
-      }
-      IntroAnimation.MaterialSharedXAxisBackward -> {
-        fragment.metaphorMaterialSharedAxisInFragment(Metaphor.SharedX, false)
-      }
-      IntroAnimation.MaterialSharedYAxisBackward -> {
-        fragment.metaphorMaterialSharedAxisInFragment(Metaphor.SharedY, false)
-      }
-      IntroAnimation.MaterialSharedZAxisBackward -> {
-        fragment.metaphorMaterialSharedAxisInFragment(Metaphor.SharedZ, false)
-      }
-    }
-
-    /**
-     * replace fragment with currant fragment
-     */
+    /*replace fragment with currant fragment*/
     context.activity()?.supportFragmentManager?.commit {
       replace(R.id.fragment_container, fragment)
+    }
+  }
+
+  /*set views list*/
+  public fun setFragmentsList(list: List<Fragment>) {
+    fragmentList.clear()
+    fragmentList.addAll(list)
+    if (fragmentList.isNotEmpty()) {
+      showFragment(fragmentList[0])
     }
   }
 }

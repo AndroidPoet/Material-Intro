@@ -17,52 +17,54 @@
   ~  */
   -->
 
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+<layout>
 
-
-    <com.androidpoet.materialintro.MaterialIntroFragment
-        android:id="@+id/materialintroView"
+    <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
 
+        <com.androidpoet.materialintro.MaterialIntroFragment
+            android:id="@+id/materialIntroFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    </com.androidpoet.materialintro.MaterialIntroFragment>
 
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tab_layout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:layout_margin="16dp"
-        android:background="@null"
-        app:tabBackground="@drawable/tab_dot_background"
-        app:tabGravity="center"
-        app:tabIndicator="@drawable/tab_dot"
-        app:tabIndicatorColor="?attr/colorPrimary"
-        app:tabIndicatorGravity="center"
-        app:tabPaddingEnd="6dp"
-        app:tabPaddingStart="6dp" />
+        </com.androidpoet.materialintro.MaterialIntroFragment>
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/back_button"
-        style="@style/Widget.MaterialComponents.Button.TextButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="start|bottom"
-        android:layout_margin="16dp"
-        android:text="@string/back" />
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tab_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_margin="16dp"
+            android:background="@null"
+            app:tabBackground="@drawable/tab_dot_background"
+            app:tabGravity="center"
+            app:tabIndicator="@drawable/tab_dot"
+            app:tabIndicatorColor="?attr/colorPrimary"
+            app:tabIndicatorGravity="center"
+            app:tabPaddingEnd="6dp"
+            app:tabPaddingStart="6dp" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/next_button"
-        style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="end|bottom"
-        android:layout_margin="16dp"
-        android:text="@string/next" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/back_button"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|bottom"
+            android:layout_margin="16dp"
+            android:text="@string/back" />
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/next_button"
+            style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|bottom"
+            android:layout_margin="16dp"
+            android:text="@string/next" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>
