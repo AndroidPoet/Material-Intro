@@ -101,7 +101,7 @@ android:layout_height="match_parent">
 
 ```kotlin
 
-    list.add(FragmentOne())
+list.add(FragmentOne())
 list.add(FragmentTwo())
 list.add(FragmentThree())
 with(binding.materialintroView) {
