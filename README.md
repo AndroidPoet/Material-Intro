@@ -100,7 +100,7 @@ android:layout_height="match_parent">
 
 
 ```kotlin
-
+//add fragments into list
 list.add(FragmentOne())
 list.add(FragmentTwo())
 list.add(FragmentThree())
@@ -122,10 +122,6 @@ binding.nextButton.setOnClickListener {
 binding.backButton.setOnClickListener {
     binding.materialintroView.previous()
 }
-
-
-
-
 ```
 
 
@@ -145,10 +141,6 @@ IntroAnimation.SharedAxisYBackward
 IntroAnimation.SharedAxisZBackward
 IntroAnimation.ElevationScaleGrow
 IntroAnimation.ElevationScale
-
-
-
-
 ```
 
 ## Create using Builder
