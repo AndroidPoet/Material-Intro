@@ -60,9 +60,10 @@ android:layout_height="match_parent">
 
 ```kotlin
 //add views into list
-list.add(FragmentOne())
-list.add(FragmentTwo())
-list.add(FragmentThree())
+  list.add(R.layout.layout_one)
+  list.add(R.layout.layout_two)
+  list.add(R.layout.layout_three)
+
 
 binding.materialIntroFragment.apply {
     setFragmentsList(list)
