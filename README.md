@@ -181,12 +181,9 @@ val meta = MaterialIntroFragment.Builder(this)
 .setEnterOverlap(true)
 .build()
 
-
-
-    meta.next()
-    meta.previous()
-    meta.setFragmentsList(list)
-
+meta.next()
+meta.previous()
+meta.setFragmentsList(list)
 ```
 
 
