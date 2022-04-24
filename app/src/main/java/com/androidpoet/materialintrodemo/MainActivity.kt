@@ -3,17 +3,29 @@ package com.androidpoet.materialintrodemo
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.androidpoet.materialintro.materialIntroFragment
 import com.androidpoet.materialintrodemo.databinding.ActivityMainBinding
 import com.androidpoet.metaphor.IntroAnimation
 
 class MainActivity : AppCompatActivity() {
 
   private lateinit var binding: ActivityMainBinding
-  private var list: ArrayList<Int> = arrayListOf()
+  private lateinit var list: MutableList<Int>
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     binding = ActivityMainBinding.inflate(layoutInflater)
     setContentView(binding.root)
+
+
+
+
+
+
+
+
+
+
+
 
     list.add(R.layout.layout_one)
     list.add(R.layout.layout_two)
@@ -55,4 +67,10 @@ class MainActivity : AppCompatActivity() {
     }
     binding.tabLayout.touchables.forEach { it.isEnabled = false }
   }
+
+
+
+
+
+
 }
