@@ -4,6 +4,8 @@ package com.androidpoet.materialintrodemo
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.androidpoet.materialintro.MaterialIntroFragment
+import com.androidpoet.materialintro.materialIntroFragment
 import com.androidpoet.materialintrodemo.databinding.ActivityFragmentBinding
 import com.androidpoet.metaphor.IntroAnimation
 
@@ -18,6 +20,30 @@ class FragmentActivity : AppCompatActivity() {
     list.add(FragmentOne())
     list.add(FragmentTwo())
     list.add(FragmentThree())
+
+
+
+
+
+    val meta = MaterialIntroFragment.Builder(this)
+      .setEnterAnimation(IntroAnimation.Fade)
+      .setExitAnimation(IntroAnimation.Fade)
+      .setReenterAnimation(IntroAnimation.SharedAxisXBackward)
+      .setReturnAnimation(IntroAnimation.SharedAxisXForward)
+      .setEnterDuration(300)
+      .setExitDuration(300)
+      .setReturnDuration(300)
+      .setReenterDuration(300)
+      .setEnterOverlap(true)
+      .setEnterOverlap(true)
+      .build()
+
+
+
+    meta.next()
+    meta.previous()
+    meta.setFragmentsList(list)
+
 
     binding.materialIntroFragment.apply {
       setFragmentsList(list)
