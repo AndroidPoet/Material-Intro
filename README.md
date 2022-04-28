@@ -7,10 +7,6 @@ Sophisticated and cool intro with Material Motion Animations.
 </p>
 
 
-
-
-
-
 <p align="center">
   <a href="https://devlibrary.withgoogle.com/authors/androidpoet"><img alt="Google" src="https://user-images.githubusercontent.com/13647384/162663007-d911f6ce-ac1b-4754-a63b-eadbef38087f.svg"/></a>
 <br>
