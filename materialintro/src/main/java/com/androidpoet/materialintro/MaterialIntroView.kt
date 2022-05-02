@@ -35,8 +35,8 @@ public inline fun materialIntroView(
  */
 public class MaterialIntroView : FrameLayout {
 
-  /** duration of enter the animations. */
-  public var layoutList: ArrayList<Int> = ArrayList()
+  /** views list. */
+  public var layoutList: MutableList<Int> = mutableListOf()
 
   /**current fragment index */
   public var index: Int = 0
@@ -93,6 +93,12 @@ public class MaterialIntroView : FrameLayout {
 
   init {
     val v: View = inflate(context, R.layout.materialintro, this)
+
+    post {
+      if (layoutList.isNotEmpty()) {
+        showScene(this.layoutList[0], this.nextAnimation, this.nextDuration, this)
+      }
+    }
   }
 
   /** Builder class for [MaterialIntroView]. */
@@ -117,8 +123,10 @@ public class MaterialIntroView : FrameLayout {
       apply { this.materialIntroView.previousAnimation = value }
 
     /** set ViewsList . */
-    public fun setViewsList(value: ArrayList<Int>): Builder =
-      apply { this.materialIntroView.layoutList = value }
+    public fun setViewsList(value: MutableList<Int>): Builder =
+      apply {
+        this.materialIntroView.layoutList = value
+      }
 
     public fun setOnIndexChangeListener(value: OnIndexChangeListener): Builder = apply {
       this.materialIntroView.onIndexChangeListener = value
@@ -145,7 +153,6 @@ public class MaterialIntroView : FrameLayout {
   /*go to next fragment*/
 
   public fun next() {
-
     if (indexExists(layoutList, index + 1)) {
       index += 1
       showScene(this.layoutList[index], this.nextAnimation, this.nextDuration, this)
@@ -161,6 +168,5 @@ public class MaterialIntroView : FrameLayout {
   public fun setViewsList(list: List<Int>) {
     layoutList.clear()
     layoutList.addAll(list)
-    showScene(this.layoutList[0], this.nextAnimation, this.nextDuration, this)
   }
 }

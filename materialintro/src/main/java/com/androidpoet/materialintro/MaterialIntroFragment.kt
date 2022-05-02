@@ -37,8 +37,9 @@ public inline fun materialIntroFragment(
  */
 public class MaterialIntroFragment : FrameLayout {
 
-  /** duration of enter the animations. */
-  private var fragmentList = ArrayList<Fragment>()
+  /** fragments list. */
+
+  public var fragmentList: MutableList<Fragment> = mutableListOf()
 
   /**current fragment index */
   private var index: Int = 0
@@ -89,6 +90,14 @@ public class MaterialIntroFragment : FrameLayout {
 
   init {
     val v: View = inflate(context, R.layout.materialintro, this)
+
+    post {
+      if (fragmentList.isNotEmpty()) {
+        if (fragmentList.isNotEmpty()) {
+          showFragment(fragmentList[0])
+        }
+      }
+    }
   }
 
   public constructor(context: Context) : super(context)
@@ -155,7 +164,7 @@ public class MaterialIntroFragment : FrameLayout {
       apply { this.materialIntroFragment.returnTransitionOverlap = value }
 
     /** sets the ScrimColor of the Fragment. */
-    public fun setFragmentList(value: ArrayList<Fragment>): Builder =
+    public fun setFragmentList(value: MutableList<Fragment>): Builder =
       apply { this.materialIntroFragment.fragmentList = value }
 
     public fun setOnIndexChangeListener(value: OnIndexChangeListener): Builder = apply {
@@ -210,8 +219,5 @@ public class MaterialIntroFragment : FrameLayout {
   public fun setFragmentsList(list: List<Fragment>) {
     fragmentList.clear()
     fragmentList.addAll(list)
-    if (fragmentList.isNotEmpty()) {
-      showFragment(fragmentList[0])
-    }
   }
 }

@@ -30,6 +30,7 @@ public final class com/androidpoet/materialintro/MaterialIntroFragment : android
 	public final fun getEnterTransitionOverlap ()Z
 	public final fun getExitAnimation ()Lcom/androidpoet/metaphor/IntroAnimation;
 	public final fun getExitDuration ()J
+	public final fun getFragmentList ()Ljava/util/List;
 	public final fun getReenterAnimation ()Lcom/androidpoet/metaphor/IntroAnimation;
 	public final fun getReenterDuration ()J
 	public final fun getReturnAnimation ()Lcom/androidpoet/metaphor/IntroAnimation;
@@ -42,6 +43,7 @@ public final class com/androidpoet/materialintro/MaterialIntroFragment : android
 	public final fun setEnterTransitionOverlap (Z)V
 	public final fun setExitAnimation (Lcom/androidpoet/metaphor/IntroAnimation;)V
 	public final fun setExitDuration (J)V
+	public final fun setFragmentList (Ljava/util/List;)V
 	public final fun setFragmentsList (Ljava/util/List;)V
 	public final fun setOnIndexChangeListener (Lcom/androidpoet/materialintro/OnIndexChangeListener;)V
 	public final synthetic fun setOnIndexChangeListener (Lkotlin/jvm/functions/Function1;)V
@@ -60,7 +62,7 @@ public final class com/androidpoet/materialintro/MaterialIntroFragment$Builder {
 	public final fun setEnterOverlap (Z)Lcom/androidpoet/materialintro/MaterialIntroFragment$Builder;
 	public final fun setExitAnimation (Lcom/androidpoet/metaphor/IntroAnimation;)Lcom/androidpoet/materialintro/MaterialIntroFragment$Builder;
 	public final fun setExitDuration (J)Lcom/androidpoet/materialintro/MaterialIntroFragment$Builder;
-	public final fun setFragmentList (Ljava/util/ArrayList;)Lcom/androidpoet/materialintro/MaterialIntroFragment$Builder;
+	public final fun setFragmentList (Ljava/util/List;)Lcom/androidpoet/materialintro/MaterialIntroFragment$Builder;
 	public final fun setOnIndexChangeListener (Lcom/androidpoet/materialintro/OnIndexChangeListener;)Lcom/androidpoet/materialintro/MaterialIntroFragment$Builder;
 	public final synthetic fun setOnIndexChangeListener (Lkotlin/jvm/functions/Function1;)Lcom/androidpoet/materialintro/MaterialIntroFragment$Builder;
 	public final fun setReenterAnimation (Lcom/androidpoet/metaphor/IntroAnimation;)Lcom/androidpoet/materialintro/MaterialIntroFragment$Builder;
@@ -80,7 +82,7 @@ public final class com/androidpoet/materialintro/MaterialIntroView : android/wid
 	public fun <init> (Landroid/content/Context;Landroid/util/AttributeSet;I)V
 	public final fun getEnterTransitionOverlap ()Z
 	public final fun getIndex ()I
-	public final fun getLayoutList ()Ljava/util/ArrayList;
+	public final fun getLayoutList ()Ljava/util/List;
 	public final fun getNextAnimation ()Lcom/androidpoet/metaphor/IntroAnimation;
 	public final fun getNextDuration ()J
 	public final fun getPreviousAnimation ()Lcom/androidpoet/metaphor/IntroAnimation;
@@ -90,7 +92,7 @@ public final class com/androidpoet/materialintro/MaterialIntroView : android/wid
 	public final fun previous ()V
 	public final fun setEnterTransitionOverlap (Z)V
 	public final fun setIndex (I)V
-	public final fun setLayoutList (Ljava/util/ArrayList;)V
+	public final fun setLayoutList (Ljava/util/List;)V
 	public final fun setNextAnimation (Lcom/androidpoet/metaphor/IntroAnimation;)V
 	public final fun setNextDuration (J)V
 	public final fun setOnIndexChangeListener (Lcom/androidpoet/materialintro/OnIndexChangeListener;)V
@@ -110,7 +112,7 @@ public final class com/androidpoet/materialintro/MaterialIntroView$Builder {
 	public final fun setOnIndexChangeListener (Lcom/androidpoet/materialintro/OnIndexChangeListener;)Lcom/androidpoet/materialintro/MaterialIntroView$Builder;
 	public final synthetic fun setOnIndexChangeListener (Lkotlin/jvm/functions/Function1;)Lcom/androidpoet/materialintro/MaterialIntroView$Builder;
 	public final fun setPreviousAnimation (Lcom/androidpoet/metaphor/IntroAnimation;)Lcom/androidpoet/materialintro/MaterialIntroView$Builder;
-	public final fun setViewsList (Ljava/util/ArrayList;)Lcom/androidpoet/materialintro/MaterialIntroView$Builder;
+	public final fun setViewsList (Ljava/util/List;)Lcom/androidpoet/materialintro/MaterialIntroView$Builder;
 }
 
 public final class com/androidpoet/materialintro/MaterialIntroViewKt {
