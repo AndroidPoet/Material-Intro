@@ -193,7 +193,7 @@ meta.previous()
 ## MaterialFade
 
 <p align="center">
-<img src="https://user-images.githubusercontent.com/13647384/159129150-2b75f746-3982-4ed9-8b4a-f7936dc6a9fb.gif" width="30%"  />
+<img src="https://user-images.githubusercontent.com/13647384/159129150-2b75f746-3982-4ed9-8b4a-f7936dc6a9fb.gif"  />
 
 </p> <br>
 
@@ -201,14 +201,14 @@ meta.previous()
 ## Fade
 
 <p align="center">
-<img src="https://user-images.githubusercontent.com/13647384/159129501-e7af0b29-ff54-4853-8f2f-566c8132af3b.gif" width="30%"  />
+<img src="https://user-images.githubusercontent.com/13647384/159129501-e7af0b29-ff54-4853-8f2f-566c8132af3b.gif"  />
 
 </p> <br>
 
 ## SharedAxis
 
 <p align="center">
-<img src="https://user-images.githubusercontent.com/13647384/159129757-4706821f-a86d-443b-8db3-5d88f6aee841.gif" width="30%"  />
+<img src="https://user-images.githubusercontent.com/13647384/159129757-4706821f-a86d-443b-8db3-5d88f6aee841.gif"  />
 
 </p> <br>
 
