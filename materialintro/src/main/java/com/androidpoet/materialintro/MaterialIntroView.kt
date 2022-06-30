@@ -145,7 +145,7 @@ public class MaterialIntroView : FrameLayout {
   public fun previous() {
     if (indexExists(layoutList, index - 1)) {
       index -= 1
-      showScene(this.layoutList[index], this.nextAnimation, this.previousDuration, this)
+      showScene(this.layoutList[index], this.previousAnimation, this.previousDuration, this)
       onIndexChangeListener?.onChange(index)
     }
   }
