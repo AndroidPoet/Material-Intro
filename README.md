@@ -61,13 +61,13 @@ android:layout_height="match_parent">
   list.add(R.layout.layout_three)
 
 
-binding.materialIntroFragment.apply {
-    setFragmentsList(list)
-    enterAnimation = IntroAnimation.SharedAxisXForward
-    reenterAnimation = IntroAnimation.SharedAxisXBackward
-    enterDuration = 500
-    exitDuration = 500
-}
+   with(binding.materialintroView) {
+      setViewsList(list)
+      nextAnimation = IntroAnimation.Fade
+      previousAnimation = IntroAnimation.Fade
+      nextDuration = 500
+      previousDuration = 500
+    }
 
 
 //  go next view with animation
@@ -101,13 +101,14 @@ android:layout_height="match_parent">
 list.add(FragmentOne())
 list.add(FragmentTwo())
 list.add(FragmentThree())
-with(binding.materialintroView) {
-    setViewsList(list)
-    nextAnimation = IntroAnimation.Fade
-    previousAnimation = IntroAnimation.Fade
-    nextDuration = 500
-    previousDuration = 500
-}
+	
+  binding.materialIntroFragment.apply {
+      setFragmentsList(list)
+      enterAnimation = IntroAnimation.SharedAxisXForward
+      reenterAnimation = IntroAnimation.SharedAxisXBackward
+      enterDuration = 500
+      exitDuration = 500
+    }
 
 
 //  go next view with animation
@@ -142,27 +143,11 @@ IntroAnimation.ElevationScale
 
 ## Create using Builder
 
-This is how to create an instance of the MaterialIntro using kotlin dsl.
 
-```kotlin
-val meta = materialIntroFragment(this) {
-setFragmentsList(list)
-setEnterAnimation(IntroAnimation.Fade)
-setExitAnimation(IntroAnimation.Fade)
-setReenterAnimation(IntroAnimation.SharedAxisXBackward)
-setReturnAnimation(IntroAnimation.SharedAxisXForward)
-setEnterDuration(300)
-setExitDuration(300)
-setReturnDuration(300)
-setReenterDuration(300)
-setEnterOverlap(true)
-setEnterOverlap(true)
-build()
-}
-meta.next()
-meta.previous()
-```
+
+
 We can create the MaterialIntro using MaterialIntro.Builder.
+
 ```kotlin
 val meta = MaterialIntroFragment.Builder(this)
  .setFragmentsList(list)
@@ -180,10 +165,28 @@ val meta = MaterialIntroFragment.Builder(this)
 
 meta.next()
 meta.previous()
+```	
+This is how to create an instance of the MaterialIntro using kotlin dsl.		
+```kotlin
 
-```
-
-
+val meta = materialIntroFragment(this) {
+setFragmentsList(list)
+setEnterAnimation(IntroAnimation.Fade)
+setExitAnimation(IntroAnimation.Fade)
+setReenterAnimation(IntroAnimation.SharedAxisXBackward)
+setReturnAnimation(IntroAnimation.SharedAxisXForward)
+setEnterDuration(300)
+setExitDuration(300)
+setReturnDuration(300)
+setReenterDuration(300)
+setEnterOverlap(true)
+setEnterOverlap(true)
+build()
+}
+meta.next()
+meta.previous()
+```	
+	
 
 
 

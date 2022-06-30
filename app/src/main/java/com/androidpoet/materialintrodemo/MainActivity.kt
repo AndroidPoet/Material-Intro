@@ -51,13 +51,16 @@ class MainActivity : AppCompatActivity() {
     }
 
 //    with(binding.materialintroView) {
+//      setViewsList(list)
 //      nextAnimation = IntroAnimation.Fade
 //      previousAnimation = IntroAnimation.Fade
 //      nextDuration = 500
 //      previousDuration = 500
 //
 //
-//      setViewsList(list)
+//
+//
+//    }
 //
 //      //  go next view with animation
 //      binding.nextButton.setOnClickListener {

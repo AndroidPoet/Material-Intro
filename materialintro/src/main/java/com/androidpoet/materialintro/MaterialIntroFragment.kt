@@ -59,15 +59,6 @@ public class MaterialIntroFragment : FrameLayout {
   /** Enter Animation of  fragment. */
   public var enterAnimation: IntroAnimation = IntroAnimation.None
 
-  /** Exit Animation of  fragment. */
-  public var exitAnimation: IntroAnimation = IntroAnimation.None
-
-  /** Reenter Animation of  fragment. */
-  public var reenterAnimation: IntroAnimation = IntroAnimation.None
-
-  /** Return Animation of  fragment. */
-  public var returnAnimation: IntroAnimation = IntroAnimation.None
-
   /**   Enter AnimationOverlap of  fragment. */
   public var enterTransitionOverlap: Boolean = false
 
@@ -143,18 +134,6 @@ public class MaterialIntroFragment : FrameLayout {
     public fun setEnterAnimation(value: IntroAnimation): Builder =
       apply { this.materialIntroFragment.enterAnimation = value }
 
-    /** sets the exit Animation of the Fragment. */
-    public fun setExitAnimation(value: IntroAnimation): Builder =
-      apply { this.materialIntroFragment.exitAnimation = value }
-
-    /** sets the return Animation of the Fragment. */
-    public fun setReturnAnimation(value: IntroAnimation): Builder =
-      apply { this.materialIntroFragment.returnAnimation = value }
-
-    /** sets the reenter Animation of the Fragment. */
-    public fun setReenterAnimation(value: IntroAnimation): Builder =
-      apply { this.materialIntroFragment.reenterAnimation = value }
-
     /** sets the enter Overlap of the Fragment. */
     public fun setEnterOverlap(value: Boolean): Builder =
       apply { this.materialIntroFragment.enterTransitionOverlap = value }
@@ -214,6 +193,9 @@ public class MaterialIntroFragment : FrameLayout {
       replace(R.id.fragment_container, fragment)
     }
   }
+
+
+
 
   /*set views list*/
   public fun setFragmentsList(list: List<Fragment>) {

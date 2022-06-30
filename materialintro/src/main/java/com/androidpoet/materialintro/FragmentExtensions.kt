@@ -14,17 +14,8 @@ internal fun Fragment.applyAnimation(
 
   val enterAnimation =
     getIntroAnimation(materialIntroFragment.enterAnimation)?.let { addAnimationProperties(it, materialIntroFragment, materialIntroFragment.enterDuration) }
-  val exitAnimation =
-    getIntroAnimation(materialIntroFragment.exitAnimation)?.let { addAnimationProperties(it, materialIntroFragment, materialIntroFragment.exitDuration) }
-  val reenterAnimation =
-    getIntroAnimation(materialIntroFragment.reenterAnimation)?.let { addAnimationProperties(it, materialIntroFragment, materialIntroFragment.reenterDuration) }
-  val returnAnimation =
-    getIntroAnimation(materialIntroFragment.returnAnimation)?.let { addAnimationProperties(it, materialIntroFragment, materialIntroFragment.returnDuration) }
-
   enterTransition = enterAnimation
-  exitTransition = exitAnimation
-  reenterTransition = reenterAnimation
-  returnTransition = returnAnimation
+
 }
 
 /** applies Properties on Animation form attributes. */
