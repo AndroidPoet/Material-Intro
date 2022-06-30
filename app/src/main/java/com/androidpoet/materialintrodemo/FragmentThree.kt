@@ -1,3 +1,4 @@
+
 package com.androidpoet.materialintrodemo
 
 import android.os.Bundle
@@ -19,27 +20,27 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class FragmentThree : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-    private lateinit var viewBinding: LayoutThreeBinding
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+  // TODO: Rename and change types of parameters
+  private var param1: String? = null
+  private var param2: String? = null
+  private lateinit var viewBinding: LayoutThreeBinding
+  override fun onCreate(savedInstanceState: Bundle?) {
+    super.onCreate(savedInstanceState)
+    arguments?.let {
+      param1 = it.getString(ARG_PARAM1)
+      param2 = it.getString(ARG_PARAM2)
     }
+  }
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        // Inflate the layout for this fragment
-        viewBinding = LayoutThreeBinding.inflate(inflater, container, false)
+  override fun onCreateView(
+    inflater: LayoutInflater,
+    container: ViewGroup?,
+    savedInstanceState: Bundle?
+  ): View {
+    // Inflate the layout for this fragment
+    viewBinding = LayoutThreeBinding.inflate(inflater, container, false)
 
-        viewBinding.image.load(R.drawable.undraw_c)
-        return viewBinding.root
-    }
+    viewBinding.image.load(R.drawable.undraw_c)
+    return viewBinding.root
+  }
 }

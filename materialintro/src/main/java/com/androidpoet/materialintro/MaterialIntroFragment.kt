@@ -194,9 +194,6 @@ public class MaterialIntroFragment : FrameLayout {
     }
   }
 
-
-
-
   /*set views list*/
   public fun setFragmentsList(list: List<Fragment>) {
     fragmentList.clear()

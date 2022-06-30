@@ -37,7 +37,7 @@ Add the dependency below to your **module**'s `build.gradle` file:
 
 ```gradle
 dependencies {
-    implementation("io.github.androidpoet:materialintro:1.0.7")
+    implementation("io.github.androidpoet:materialintro:1.0.8")
 }
 ```
 

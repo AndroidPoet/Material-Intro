@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import coil.load
-import com.androidpoet.materialintrodemo.databinding.LayoutOneBinding
 import com.androidpoet.materialintrodemo.databinding.LayoutTwoBinding
 
 // TODO: Rename parameter arguments, choose names that match
@@ -37,12 +36,11 @@ class FragmentTwo : Fragment() {
     inflater: LayoutInflater,
     container: ViewGroup?,
     savedInstanceState: Bundle?
-  ): View{
+  ): View {
     // Inflate the layout for this fragment
     viewBinding = LayoutTwoBinding.inflate(inflater, container, false)
 
     viewBinding.image.load(R.drawable.undraw_b)
     return viewBinding.root
-
   }
 }

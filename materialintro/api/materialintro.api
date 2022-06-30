@@ -28,12 +28,9 @@ public final class com/androidpoet/materialintro/MaterialIntroFragment : android
 	public final fun getEnterAnimation ()Lcom/androidpoet/metaphor/IntroAnimation;
 	public final fun getEnterDuration ()J
 	public final fun getEnterTransitionOverlap ()Z
-	public final fun getExitAnimation ()Lcom/androidpoet/metaphor/IntroAnimation;
 	public final fun getExitDuration ()J
 	public final fun getFragmentList ()Ljava/util/List;
-	public final fun getReenterAnimation ()Lcom/androidpoet/metaphor/IntroAnimation;
 	public final fun getReenterDuration ()J
-	public final fun getReturnAnimation ()Lcom/androidpoet/metaphor/IntroAnimation;
 	public final fun getReturnDuration ()J
 	public final fun getReturnTransitionOverlap ()Z
 	public final fun next ()V
@@ -41,15 +38,12 @@ public final class com/androidpoet/materialintro/MaterialIntroFragment : android
 	public final fun setEnterAnimation (Lcom/androidpoet/metaphor/IntroAnimation;)V
 	public final fun setEnterDuration (J)V
 	public final fun setEnterTransitionOverlap (Z)V
-	public final fun setExitAnimation (Lcom/androidpoet/metaphor/IntroAnimation;)V
 	public final fun setExitDuration (J)V
 	public final fun setFragmentList (Ljava/util/List;)V
 	public final fun setFragmentsList (Ljava/util/List;)V
 	public final fun setOnIndexChangeListener (Lcom/androidpoet/materialintro/OnIndexChangeListener;)V
 	public final synthetic fun setOnIndexChangeListener (Lkotlin/jvm/functions/Function1;)V
-	public final fun setReenterAnimation (Lcom/androidpoet/metaphor/IntroAnimation;)V
 	public final fun setReenterDuration (J)V
-	public final fun setReturnAnimation (Lcom/androidpoet/metaphor/IntroAnimation;)V
 	public final fun setReturnDuration (J)V
 	public final fun setReturnTransitionOverlap (Z)V
 }
@@ -60,14 +54,11 @@ public final class com/androidpoet/materialintro/MaterialIntroFragment$Builder {
 	public final fun setEnterAnimation (Lcom/androidpoet/metaphor/IntroAnimation;)Lcom/androidpoet/materialintro/MaterialIntroFragment$Builder;
 	public final fun setEnterDuration (J)Lcom/androidpoet/materialintro/MaterialIntroFragment$Builder;
 	public final fun setEnterOverlap (Z)Lcom/androidpoet/materialintro/MaterialIntroFragment$Builder;
-	public final fun setExitAnimation (Lcom/androidpoet/metaphor/IntroAnimation;)Lcom/androidpoet/materialintro/MaterialIntroFragment$Builder;
 	public final fun setExitDuration (J)Lcom/androidpoet/materialintro/MaterialIntroFragment$Builder;
 	public final fun setFragmentList (Ljava/util/List;)Lcom/androidpoet/materialintro/MaterialIntroFragment$Builder;
 	public final fun setOnIndexChangeListener (Lcom/androidpoet/materialintro/OnIndexChangeListener;)Lcom/androidpoet/materialintro/MaterialIntroFragment$Builder;
 	public final synthetic fun setOnIndexChangeListener (Lkotlin/jvm/functions/Function1;)Lcom/androidpoet/materialintro/MaterialIntroFragment$Builder;
-	public final fun setReenterAnimation (Lcom/androidpoet/metaphor/IntroAnimation;)Lcom/androidpoet/materialintro/MaterialIntroFragment$Builder;
 	public final fun setReenterDuration (J)Lcom/androidpoet/materialintro/MaterialIntroFragment$Builder;
-	public final fun setReturnAnimation (Lcom/androidpoet/metaphor/IntroAnimation;)Lcom/androidpoet/materialintro/MaterialIntroFragment$Builder;
 	public final fun setReturnDuration (J)Lcom/androidpoet/materialintro/MaterialIntroFragment$Builder;
 	public final fun setReturnOverlap (Z)Lcom/androidpoet/materialintro/MaterialIntroFragment$Builder;
 }
