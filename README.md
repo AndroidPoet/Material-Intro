@@ -105,9 +105,9 @@ list.add(FragmentThree())
   binding.materialIntroFragment.apply {
       setFragmentsList(list)
       enterAnimation = IntroAnimation.SharedAxisXForward
-      reenterAnimation = IntroAnimation.SharedAxisXBackward
+     
       enterDuration = 500
-      exitDuration = 500
+   
     }
 
 
